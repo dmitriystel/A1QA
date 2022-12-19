@@ -1,40 +1,32 @@
 package by.a1qa.task2_1.test;
 
-import by.a1qa.task2_1.driver.WebDriverSingleton;
-import by.a1qa.task2_1.page.HomePagePF;
+import by.a1qa.task2_1.page.MainPage;
+import by.a1qa.task2_1.page.PrivacyPolicyPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.time.Year;
 
-public class StoreSteamTest {
-    private WebDriver driver;
-
-    @BeforeMethod
-    public void browserSetUp() {
-        driver = WebDriverSingleton.getInstance();
-        driver.manage().window().maximize();
-    }
+public class StoreSteamTest extends BaseTest {
 
     @Test
     public void testPrivacyPolicySignedInCurrentYear() throws IOException {
-        String policyRevisionString = new HomePagePF(driver)
-                .openHomePage()
-                .scrollHomePage()
-                .openPrivacyPolicyPage()
+        MainPage mainPagePF = new MainPage(driver);
+        PrivacyPolicyPage privacyPolicyPage;
+
+        privacyPolicyPage = mainPagePF
+                .navigateToMainPage()
+                .scrollAndOpenPrivacyPolicy();
+
+        Assert.assertTrue(privacyPolicyPage.isSwitchLanguageElementsListDisplayed(),
+                "Privacy policy page is not open in the new tab.");
+
+        String policyRevisionString = privacyPolicyPage
                 .getPolicyRevisionString();
+
         Assert.assertTrue(policyRevisionString.contains(Integer.toString(Year.now().getValue())),
                 "Policy revision signed not in the current year.");
-    }
-
-
-
-    @AfterMethod(alwaysRun = true)
-    public void closeWebDiver() {
-        driver.quit();
-        driver = null;
     }
 }

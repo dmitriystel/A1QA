@@ -1,4 +1,4 @@
-package by.a1qa.task2_1.parser;
+package by.a1qa.task2_1.util;
 
 import by.a1qa.task2_1.bean.GameInformation;
 import by.a1qa.task2_1.bean.PrivacyPolicyRevision;
@@ -19,7 +19,6 @@ public class ParserJsonToJava {
     }
 
     public static PrivacyPolicyRevision jsonParseObject(String path) throws IOException {
-        //File file = new File(path);
         ObjectMapper om = new ObjectMapper();
         PrivacyPolicyRevision result = om.readValue(Paths.get(path).toFile(), PrivacyPolicyRevision.class);
         return result;
