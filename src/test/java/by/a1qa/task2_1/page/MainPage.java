@@ -1,7 +1,6 @@
 package by.a1qa.task2_1.page;
 
 import by.a1qa.task2_1.util.ConfigManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,22 +13,28 @@ import java.time.Duration;
 
 public class MainPage extends BasePage {
     private WebDriver driver;
-    private final String GAME_TITLE = "Dota 2";
+    public static final String GAME_TITLE = "Dota 2";
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//a[@href=\"https://store.steampowered.com/privacy_agreement/?snr=1_44_44_\"]")
+    @FindBy(xpath = "//a[contains(@href,'/privacy_agreement/?snr=1_44_44_')]")
     private WebElement privacyPolicy;
 
-    public MainPage navigateToMainPage(){
+    @FindBy(id = "store_nav_search_term")
+    private WebElement searchField;
+
+    @FindBy(xpath = "//a[@id=\"store_search_link\"]//img[contains(@src,\"blank.gif\")]")
+    private WebElement searchButtonSubmit;
+
+    public MainPage navigateToMainPage() {
         driver.get(ConfigManager.getURL());
         return this;
     }
 
-    public PrivacyPolicyPage scrollAndOpenPrivacyPolicy(){
+    public PrivacyPolicyPage scrollAndOpenPrivacyPolicy() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", privacyPolicy);
         new WebDriverWait(driver, Duration.ofSeconds(ConfigManager.getWaitDurationInSeconds()))
                 .until(ExpectedConditions.elementToBeClickable(privacyPolicy));
@@ -38,10 +43,26 @@ public class MainPage extends BasePage {
         return new PrivacyPolicyPage(driver);
     }
 
-    public void switchToNewWindow(){
+    public void switchToNewWindow() {
         String windowHandleBefore = driver.getWindowHandle(); // Store the current window handle
-        for(String windowHandle : driver.getWindowHandles()){ // Switch to new window opened
+        for (String windowHandle : driver.getWindowHandles()) { // Switch to new window opened
             driver.switchTo().window(windowHandle);
         }
+    }
+
+    public GameSearchResultPage searchDota2() {
+        new WebDriverWait(driver, Duration.ofSeconds(ConfigManager.getWaitDurationInSeconds()))
+                .until(ExpectedConditions.elementToBeClickable(searchField));
+        searchField.sendKeys(GAME_TITLE);
+        searchButtonSubmit.click();
+        return new GameSearchResultPage(driver);
+    }
+
+    public GameSearchResultPage secondSearchGame(String someGame){
+        new WebDriverWait(driver, Duration.ofSeconds(ConfigManager.getWaitDurationInSeconds()))
+                .until(ExpectedConditions.elementToBeClickable(searchField));
+        searchField.sendKeys(someGame);
+        searchButtonSubmit.click();
+        return new GameSearchResultPage(driver);
     }
 }

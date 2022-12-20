@@ -10,7 +10,6 @@ import org.openqa.selenium.support.FindBy;
 import java.io.IOException;
 
 public class PrivacyPolicyPage extends BasePage{
-
     public static final String POLICY_REVISION_DB_PATH = "src/test/resources/testData/PrivacyPolicyRevisionDB.json";
 
     @FindBy(id = "languages")

@@ -2,21 +2,20 @@ package by.a1qa.task2_1.test;
 
 import by.a1qa.task2_1.page.MainPage;
 import by.a1qa.task2_1.page.PrivacyPolicyPage;
-import org.openqa.selenium.WebDriver;
+import by.a1qa.task2_1.page.GameSearchResultPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.time.Year;
 
-public class StoreSteamTest extends BaseTest {
-
+public class PrivacyPolicyTest extends BaseTest {
     @Test
     public void testPrivacyPolicySignedInCurrentYear() throws IOException {
-        MainPage mainPagePF = new MainPage(driver);
+        MainPage mainPage = new MainPage(driver);
         PrivacyPolicyPage privacyPolicyPage;
 
-        privacyPolicyPage = mainPagePF
+        privacyPolicyPage = mainPage
                 .navigateToMainPage()
                 .scrollAndOpenPrivacyPolicy();
 
@@ -27,6 +26,6 @@ public class StoreSteamTest extends BaseTest {
                 .getPolicyRevisionString();
 
         Assert.assertTrue(policyRevisionString.contains(Integer.toString(Year.now().getValue())),
-                "Policy revision signed not in the current year.");
+                "Policy revision didn't sign in the current year.");
     }
 }
