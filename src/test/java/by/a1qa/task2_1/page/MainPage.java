@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-
+// additional
 public class MainPage extends BasePage {
     private WebDriver driver;
     public static final String GAME_TITLE = "Dota 2";
