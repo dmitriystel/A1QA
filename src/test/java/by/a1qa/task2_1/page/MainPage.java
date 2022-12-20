@@ -26,7 +26,7 @@ public class MainPage extends BasePage {
     @FindBy(id = "store_nav_search_term")
     private WebElement searchField;
 
-    @FindBy(xpath = "//a[@id=\"store_search_link\"]//img[contains(@src,\"blank.gif\")]")
+    @FindBy(xpath = "//a[@id='store_search_link']//img[contains(@src,'blank.gif')]")
     private WebElement searchButtonSubmit;
 
     public MainPage navigateToMainPage() {

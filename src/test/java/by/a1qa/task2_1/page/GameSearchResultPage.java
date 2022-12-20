@@ -19,72 +19,72 @@ public class GameSearchResultPage extends BasePage {
     public static final String DOTA2_SEARCH_RESULT_LIST_DB_PATH = "src/test/resources/testData/Dota2SearchResultListDB.json";
     public static final String SECOND_SEARCH_GAME_RESULT_LIST_DB_PATH = "src/test/resources/testData/SecondSearchGameResultListDB.json";
 
-    @FindBy(xpath = "//div[@id=\"search_resultsRows\"]/a[1]//span[@class=\"title\"]")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[1]//span[@class='title']")
     private WebElement searchResultFirstGameName;
 
-    @FindBy(xpath = "//div[@id=\"search_resultsRows\"]/a[2]//span[@class=\"title\"]")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[2]//span[@class='title']")
     private WebElement searchResultSecondGameName;
 
-    @FindBy(xpath = "//div[@id=\"search_resultsRows\"]/a[1]//span[@class=\"platform_img win\"]")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[1]//span[@class='platform_img win']")
     private WebElement WinPlatform;
 
-    @FindBy(xpath = "//div[@id=\"search_resultsRows\"]/a[1]//span[@class=\"platform_img mac\"]")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[1]//span[@class='platform_img mac']")
     private WebElement MacPlatform;
 
-    @FindBy(xpath = "//div[@id=\"search_resultsRows\"]/a[1]//span[@class=\"platform_img linux\"]")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[1]//span[@class='platform_img linux']")
     private WebElement LinuxPlatform;
 
-    @FindBy(xpath = "//div[@id=\"search_resultsRows\"]/a[1]//div[@class=\"col search_released responsive_secondrow\"]")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[1]//div[@class='col search_released responsive_secondrow']")
     private WebElement searchResultFirstGameReleaseDate;
 
-    @FindBy(xpath = "//div[@id=\"search_resultsRows\"]/a[2]//div[@class=\"col search_released responsive_secondrow\"]")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[2]//div[@class='col search_released responsive_secondrow']")
     private WebElement searchResultSecondGameReleaseDate;
 
-    @FindBy(xpath = "//div[@id=\"search_resultsRows\"]/a[1]//span[@class=\"search_review_summary positive\"]")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[1]//span[@class='search_review_summary positive']")
     private WebElement searchResultFirstGameReviewSummaryResult;
 //    //
-//    @FindBy(xpath = "//div[@id=\"search_resultsRows\"]/a[1]//span[@class=\"search_review_summary positive\"]")
+//    @FindBy(xpath = "//div[@id='search_resultsRows']/a[1]//span[@class='search_review_summary positive']")
 //    private WebElement gameInfoResult2_Game1_ReviewSummaryResult;
 
     //
-    @FindBy(xpath = "//div[@id=\"search_resultsRows\"]/a[2]//span[@class=\"search_review_summary positive\"]")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[2]//span[@class='search_review_summary positive']")
     private WebElement searchResultSecondGameReviewSummaryResult;
 //    //
-//    @FindBy(xpath = "//div[@id=\"search_resultsRows\"]/a[2]//span[@class=\"search_review_summary positive\"]")
+//    @FindBy(xpath = "//div[@id='search_resultsRows']/a[2]//span[@class='search_review_summary positive']")
 //    private WebElement gameInfoResult2_Game2_ReviewSummaryResult;
 
 
 
 
     //Price
-    @FindBy(xpath = "//div[@id=\"search_resultsRows\"]/a[1]//div[@class=\"col search_price_discount_combined responsive_secondrow\"]")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[1]//div[@class='col search_price_discount_combined responsive_secondrow']")
     private WebElement gameInfoResult1_Game1_Price; // searchFirstResultFirstGamePrice
     //
 
-    @FindBy(xpath = "//div[@id=\"search_resultsRows\"]/a[2]//div[@class=\"col search_price  responsive_secondrow\"]")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[2]//div[@class='col search_price  responsive_secondrow']")
     private WebElement gameInfoResult2_Game2_Price; // searchSecondResultSecondGamePrice
 
     //
-    @FindBy(xpath = "//div[@id=\"search_resultsRows\"]/a[2]//div[@class=\"col search_price_discount_combined responsive_secondrow\"]")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[2]//div[@class='col search_price_discount_combined responsive_secondrow']")
     private WebElement gameInfoResult1_Game2_Price; // searchFirstResultSecondGamePrice
     //
-    @FindBy(xpath = "//div[@id=\"search_resultsRows\"]/a[1]//div[@class=\"col search_price  responsive_secondrow\"]")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[1]//div[@class='col search_price  responsive_secondrow']")
     private WebElement gameInfoResult2_Game1_Price; // searchSecondResultFirstGamePrice
 
 
 
     //
-    @FindBy(xpath = "//div[@id=\"search_resultsRows\"]/a[2]//span[@class=\"platform_img music\"]")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[2]//span[@class='platform_img music']")
     private WebElement gameInfoResult_Game2_RemixeMusic; // searchFirstResultSecondGameRemixMusic
 //    //
-//    @FindBy(xpath = "//div[@id=\"search_resultsRows\"]/a[2]//span[@class=\"platform_img music\"]")
+//    @FindBy(xpath = "//div[@id='search_resultsRows']/a[2]//span[@class='platform_img music']")
 //    private WebElement gameInfoResult2_Game2_RemixeMusic;
 
 
 
 
     //
-    @FindBy(xpath = "//div[@id=\"search_resultsRows\"]/a[1]//span[@class=\"platform_img music\"]")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[1]//span[@class='platform_img music']")
     private WebElement gameInfoResult2_Game1_RemixeMusic; // searchSecondResultSecondGameRemixMusic
 
 
@@ -93,7 +93,7 @@ public class GameSearchResultPage extends BasePage {
     @FindBy (name = "displayterm")
     private WebElement searchField2;
 
-    @FindBy (xpath = "//*[@class=\"searchbar\"]//button/span")
+    @FindBy (xpath = "//*[@class='searchbar']//button/span")
     private WebElement searchInSearchField2;
 
 
