@@ -36,29 +36,33 @@ public class GameSearchPage extends BasePage {
     @FindBy(xpath = "//div[@id='search_resultsRows']/a[1]//span[@class='platform_img linux']")
     private WebElement LinuxPlatform;
 
-    @FindBy(xpath = "//div[@id='search_resultsRows']/a[1]//div[@class='col search_released responsive_secondrow']")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[1]//div[contains(@class,'released')]")
     private WebElement searchResultFirstGameReleaseDate;
 
-    @FindBy(xpath = "//div[@id='search_resultsRows']/a[2]//div[@class='col search_released responsive_secondrow']")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[2]//div[contains(@class,'released')]")
     private WebElement searchResultSecondGameReleaseDate;
 
-    @FindBy(xpath = "//div[@id='search_resultsRows']/a[1]//span[@class='search_review_summary positive']")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[1]//span[contains(@class,'summary')]")
     private WebElement searchResultFirstGameReviewSummaryResult;
 
-    @FindBy(xpath = "//div[@id='search_resultsRows']/a[2]//span[@class='search_review_summary positive']")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[2]//span[contains(@class,'summary')]")
     private WebElement searchResultSecondGameReviewSummaryResult;
 
-    @FindBy(xpath = "//div[@id='search_resultsRows']/a[1]//div[@class='col search_price_discount_combined responsive_secondrow']")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[1]//div[contains(@class,'price_')]")
     private WebElement searchFirstResultFirstGamePrice;
 
-    @FindBy(xpath = "//div[@id='search_resultsRows']/a[2]//div[@class='col search_price  responsive_secondrow']")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[2]//div[contains(@class,'col search_price ')]")
     private WebElement searchSecondResultSecondGamePrice;
 
-    @FindBy(xpath = "//div[@id='search_resultsRows']/a[2]//div[@class='col search_price_discount_combined responsive_secondrow']")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[2]//div[contains(@class,'col search_price_')]")
     private WebElement searchFirstResultSecondGamePrice;
 
-    @FindBy(xpath = "//div[@id='search_resultsRows']/a[1]//div[@class='col search_price  responsive_secondrow']")
+    @FindBy(xpath = "//div[@id='search_resultsRows']/a[1]//div[contains(@class,'col search_price_')]")
     private WebElement searchSecondResultFirstGamePrice;
+
+
+
+
 
     @FindBy(xpath = "//div[@id='search_resultsRows']/a[2]//span[@class='platform_img music']")
     private WebElement searchResultSecondGameRemixMusic;
