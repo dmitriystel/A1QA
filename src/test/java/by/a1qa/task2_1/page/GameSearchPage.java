@@ -60,10 +60,6 @@ public class GameSearchPage extends BasePage {
     @FindBy(xpath = "//div[@id='search_resultsRows']/a[1]//div[contains(@class,'col search_price_')]")
     private WebElement searchSecondResultFirstGamePrice;
 
-
-
-
-
     @FindBy(xpath = "//div[@id='search_resultsRows']/a[2]//span[@class='platform_img music']")
     private WebElement searchResultSecondGameRemixMusic;
 
