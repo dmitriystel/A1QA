@@ -1,19 +1,15 @@
 package by.a1qa.task2_1.page;
 
 import by.a1qa.task2_1.util.ConfigManager;
+import by.a1qa.task2_1.wait.ConditionalWait;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-// additional
 public class MainPage extends BasePage {
     private WebDriver driver;
-    public static final String GAME_TITLE = "Dota 2";
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -36,8 +32,7 @@ public class MainPage extends BasePage {
 
     public PrivacyPolicyPage scrollAndOpenPrivacyPolicy() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", privacyPolicy);
-        new WebDriverWait(driver, Duration.ofSeconds(ConfigManager.getWaitDurationInSeconds()))
-                .until(ExpectedConditions.elementToBeClickable(privacyPolicy));
+        ConditionalWait.waitToBeClickable(privacyPolicy);
         privacyPolicy.click();
         switchToNewWindow();
         return new PrivacyPolicyPage(driver);
@@ -50,19 +45,17 @@ public class MainPage extends BasePage {
         }
     }
 
-    public GameSearchResultPage searchDota2() {
-        new WebDriverWait(driver, Duration.ofSeconds(ConfigManager.getWaitDurationInSeconds()))
-                .until(ExpectedConditions.elementToBeClickable(searchField));
-        searchField.sendKeys(GAME_TITLE);
+    public GameSearchPage searchDota2() {
+        ConditionalWait.waitToBeClickable(searchField);
+        searchField.sendKeys(ConfigManager.getGameTitle());
         searchButtonSubmit.click();
-        return new GameSearchResultPage(driver);
+        return new GameSearchPage(driver);
     }
 
-    public GameSearchResultPage secondSearchGame(String someGame){
-        new WebDriverWait(driver, Duration.ofSeconds(ConfigManager.getWaitDurationInSeconds()))
-                .until(ExpectedConditions.elementToBeClickable(searchField));
+    public GameSearchPage secondSearchGame(String someGame){
+        ConditionalWait.waitToBeClickable(searchField);
         searchField.sendKeys(someGame);
         searchButtonSubmit.click();
-        return new GameSearchResultPage(driver);
+        return new GameSearchPage(driver);
     }
 }
