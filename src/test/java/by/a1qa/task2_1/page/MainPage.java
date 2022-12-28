@@ -6,7 +6,15 @@ import by.a1qa.task2_1.util.JSUtil;
 import by.a1qa.task2_1.wait.ConditionalWait;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+/*
+Code review 23.12.2022
+11th comment: Scrolling to the element should be placed in utility methods.
+Then it will be possible to avoid code duplication and use the method for other elements
+fixed: Scrolling to the element is placed in utility method.
 
+13th comment: what if the search game changes? the method should be named more clearly
+fixed: renamed
+*/
 public class MainPage extends BasePage {
     private WebDriver driver;
 

@@ -2,8 +2,6 @@ package by.a1qa.task2_1.bean;
 
 import lombok.*;
 
-import java.util.Objects;
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

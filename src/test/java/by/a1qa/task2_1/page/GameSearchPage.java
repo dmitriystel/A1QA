@@ -36,6 +36,8 @@ fixed: made one universal method - getGameInfo
 
 10th comment: All checks must be in the tests
 fixed: moved to test method
+
+
 */
 public class GameSearchPage extends BasePage {
     public GameSearchPage() {

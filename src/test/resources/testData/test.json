@@ -1,3 +1,6 @@
 {
-  "gameTitle": "Dota 2"
+  "gameTitleDota2": "Dota 2",
+  "FIRST_SEARCH_RESULT_LIST_DB_PATH":  "src/test/resources/testData/FirstSearchResultListDB.json",
+  "SECOND_SEARCH_GAME_RESULT_LIST_DB_PATH": "src/test/resources/testData/SecondSearchGameResultListDB.json",
+  "LANGUAGE_SUPPORT": "src/test/resources/testData/LanguagesSupport.json"
 }
