@@ -4,7 +4,6 @@ import by.a1qa.task2_1.bean.GameInformation;
 import by.a1qa.task2_1.bean.PrivacyPolicyRevision;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
