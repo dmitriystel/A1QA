@@ -14,6 +14,9 @@ public class AlertsFrameWindowsForm extends BaseForm {
     private By alertsBtnLocator = By.xpath("//span[contains(text(), 'Alerts')]//parent::li");
     private Button alertsBtn = new Button(alertsBtnLocator, "Alerts Button");
 
+    private By nestedFramesButtonLocator = By.xpath("//span[contains(text(), 'Nested')]//parent::li");
+    private Button nestedFramesButton = new Button(nestedFramesButtonLocator, "Nested Frames Button");
+
 
     public AlertsFrameWindowsForm() {
         super(alertsFrameAndWindowLabel, "alertsFrameAndWindowsPage");
@@ -23,6 +26,11 @@ public class AlertsFrameWindowsForm extends BaseForm {
         CustomLogger.info(this.getFormName() + " : openAlertsForm()");
 //        ConditionalWait.waitToBeClickable(alertsBtn);
         alertsBtn.click();
+        return this;
+    }
+
+    public AlertsFrameWindowsForm nestedFramesButtonClick() {
+        nestedFramesButton.click();
         return this;
     }
 
