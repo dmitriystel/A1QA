@@ -15,7 +15,10 @@ public class AlertsFrameWindowsForm extends BaseForm {
     private Button alertsBtn = new Button(alertsBtnLocator, "Alerts Button");
 
     private By nestedFramesButtonLocator = By.xpath("//span[contains(text(), 'Nested')]//parent::li");
-    private Button nestedFramesButton = new Button(nestedFramesButtonLocator, "Nested Frames Button");
+    private Button nestedFramesBtn = new Button(nestedFramesButtonLocator, "Nested Frames Button");
+
+    private By browserWindowsButtonLocator = By.xpath("//span[contains(text(), 'Browser')]//parent::li");
+    private Button browserWindowsBtn = new Button(browserWindowsButtonLocator, "Browser Windows button");
 
 
     public AlertsFrameWindowsForm() {
@@ -30,7 +33,12 @@ public class AlertsFrameWindowsForm extends BaseForm {
     }
 
     public AlertsFrameWindowsForm nestedFramesButtonClick() {
-        nestedFramesButton.click();
+        nestedFramesBtn.click();
+        return this;
+    }
+
+    public AlertsFrameWindowsForm browserWindowsButtonClick() {
+        browserWindowsBtn.click();
         return this;
     }
 

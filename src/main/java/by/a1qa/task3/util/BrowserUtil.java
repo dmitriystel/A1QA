@@ -6,31 +6,26 @@ public class BrowserUtil {
 
     public static void goToURL(String url){
         CustomLogger.info("BrowserUtil.goToURL(): " + url);
-//        Driver.getDriver().navigate().to(url);
         Driver.getInstance().navigate().to(url);
     }
 
     public static void closeBrowser(){
         CustomLogger.info("BrowserUtil.closeBrowser()");
-//        Driver.getDriver().quit();
         Driver.getInstance().quit();
     }
 
     public static void closeCurrentTab(){
         CustomLogger.info("BrowserUtil.closeCurrentTab()");
-//        Driver.getDriver().close();
         Driver.getInstance().close();
     }
 
     public static String getCurrentTabHandle(){
         CustomLogger.info("BrowserUtil.getWindowHandle()");
-//        return Driver.getDriver().getWindowHandle();
         return Driver.getInstance().getWindowHandle();
 
     }
 
     public static int getTabCount(){
-//        return Driver.getDriver().getWindowHandles().size();
         return Driver.getInstance().getWindowHandles().size();
     }
 
