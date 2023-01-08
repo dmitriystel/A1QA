@@ -19,6 +19,9 @@ public class MainPage extends BaseForm {
     private Button alertsFrameAndWindowsBtn = new Button(alertsFrameAndWindowsBtnLocator,
             "Alerts, Frame & Windows button");
 
+    private By elementsButtonLocator = By.xpath("//h5[contains(text(), 'Elements')]//parent::div");
+    private Button elementsButton = new Button(elementsButtonLocator, "Elements button");
+
     public MainPage() {
         super(seleniumCertificationTrainingLabel, "mainPage");
     }
@@ -37,5 +40,11 @@ public class MainPage extends BaseForm {
         return this;
     }
 
+    public MainPage clickElementsBtn(){
+        CustomLogger.info(this.getFormName() + " : clickElementsBtn()");
+//        ConditionalWait.waitToBeClickable(elementsButton);
+        elementsButton.click();
+        return this;
+    }
 
 }
