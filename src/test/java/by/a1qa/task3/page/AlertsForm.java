@@ -12,7 +12,6 @@ public class AlertsForm extends BaseForm {
     private static By alertsLocator = By.xpath("//div[@class='main-header' and contains(text(), 'Alerts')]");
     private static Label alertsLabel = new Label(alertsLocator, "alertsFrameAndWindowLabel");
 
-
     private By toSeeAlertBtnLocator = By.id("alertButton");
     private Button toSeeAlertBtn = new Button(toSeeAlertBtnLocator, "to see alert button");
 
@@ -28,16 +27,11 @@ public class AlertsForm extends BaseForm {
     private By promptBoxResultLabelLocator = By.id("promptResult");
     private Label promptBoxResultLabel = new Label(promptBoxResultLabelLocator, "Prompt box result after alert");
 
-
-
-
     public AlertsForm() {
         super(alertsLabel, "alertsForm");
     }
 
-
     public AlertsForm openAlertYouClickedBtn(){
-//        ConditionalWait.waitToBeClickable(toSeeAlertBtn);
         CustomLogger.info(this.getFormName() + " : openAlertYouClickedBtn()");
         toSeeAlertBtn.click();
         return this;
@@ -54,7 +48,6 @@ public class AlertsForm extends BaseForm {
     public boolean isAlertPresent(){return AlertUtil.isDialogPresent();}
 
     public AlertsForm openAlertDoYouConfirmActionBtn(){
-//        ConditionalWait.waitToBeClickable(confirmBoxBtn);
         CustomLogger.info(this.getFormName() + " : openAlertDoYouConfirmActionBtn()");
         confirmBoxBtn.click();
         return this;
@@ -62,13 +55,10 @@ public class AlertsForm extends BaseForm {
 
     public String getConfirmBoxResultLabelText(){
         CustomLogger.info(this.getFormName() + " : getConfirmBoxResultLabelText()");
-//        ConditionalWait.waitToBeClickable(confirmBoxResultLabel);
         return confirmBoxResultLabel.getText();
-
     }
 
     public AlertsForm openAlertPleaseEnterYourNameBtn(){
-//        ConditionalWait.waitToBeClickable(promptBoxBtn);
         CustomLogger.info(this.getFormName() + " : openAlertPleaseEnterYourNameBtn()" );
         promptBoxBtn.click();
         return this;
@@ -80,8 +70,4 @@ public class AlertsForm extends BaseForm {
     }
 
     public String getPromptBoxResultLabelText() { return promptBoxResultLabel.getText(); }
-
-
-
-
 }

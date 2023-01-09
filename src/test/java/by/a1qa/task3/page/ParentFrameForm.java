@@ -5,6 +5,7 @@ import by.a1qa.task3.element.Label;
 import org.openqa.selenium.By;
 
 public class ParentFrameForm extends BaseFrame {
+
     private ChildIframeForm childIframePage = new ChildIframeForm();
 
     private static By parentFrameLabelLocator = By.xpath("//body[contains(text(), 'Parent frame')]");

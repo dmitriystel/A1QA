@@ -23,7 +23,6 @@ public class BrowserWindowsForm  extends BaseForm {
         super(browserWindowsFormLabel, "Browser Windows");
     }
 
-
     public void newTabBtnClick(){
         newTabBtn.click();
     }
@@ -34,10 +33,7 @@ public class BrowserWindowsForm  extends BaseForm {
     }
 
     public BrowserWindowsForm linksButtonClick(){
-//        ConditionalWait.waitToBeClickable(linksButton);
         linksBtn.click();
         return this;
     }
-
-
 }

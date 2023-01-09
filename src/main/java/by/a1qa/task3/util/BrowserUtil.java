@@ -1,43 +1,42 @@
 package by.a1qa.task3.util;
 
-import by.a1qa.task3.driver.Driver;
+import by.a1qa.task3.driver.DriverSingleton;
 
 public class BrowserUtil {
 
     public static void goToURL(String url){
         CustomLogger.info("BrowserUtil.goToURL(): " + url);
-        Driver.getInstance().navigate().to(url);
+        DriverSingleton.getDriver().navigate().to(url);
     }
 
     public static void closeBrowser(){
         CustomLogger.info("BrowserUtil.closeBrowser()");
-        Driver.getInstance().quit();
+        DriverSingleton.getDriver().quit();
     }
 
     public static void closeCurrentTab(){
         CustomLogger.info("BrowserUtil.closeCurrentTab()");
-        Driver.getInstance().close();
+        DriverSingleton.getDriver().close();
     }
 
     public static String getCurrentTabHandle(){
         CustomLogger.info("BrowserUtil.getWindowHandle()");
-        return Driver.getInstance().getWindowHandle();
-
+        return DriverSingleton.getDriver().getWindowHandle();
     }
 
     public static int getTabCount(){
-        return Driver.getInstance().getWindowHandles().size();
+        return DriverSingleton.getDriver().getWindowHandles().size();
     }
 
     public static boolean switchToOtherTab(String currentTabHandle){
-        if(Driver.getInstance().getWindowHandles().size() < 2){
+        if(DriverSingleton.getDriver().getWindowHandles().size() < 2){
             CustomLogger.error("BrowserUtil.switchToNewTab() : false");
             return false;
         }
-        for (String windowHandle : Driver.getInstance().getWindowHandles()) {
+        for (String windowHandle : DriverSingleton.getDriver().getWindowHandles()) {
             if(!currentTabHandle.contentEquals(windowHandle)) {
                 CustomLogger.info("BrowserUtil.switchToNewTab() : true");
-                Driver.getInstance().switchTo().window(windowHandle);
+                DriverSingleton.getDriver().switchTo().window(windowHandle);
                 break;
             }
         }
@@ -45,10 +44,10 @@ public class BrowserUtil {
     }
 
     public static void switchToTab(String tabHandle){
-        for (String windowHandle : Driver.getInstance().getWindowHandles()) {
+        for (String windowHandle : DriverSingleton.getDriver().getWindowHandles()) {
             if(tabHandle.contentEquals(windowHandle)) {
                 CustomLogger.info("BrowserUtil.switchToTab()");
-                Driver.getInstance().switchTo().window(windowHandle);
+                DriverSingleton.getDriver().switchTo().window(windowHandle);
                 break;
             }
         }

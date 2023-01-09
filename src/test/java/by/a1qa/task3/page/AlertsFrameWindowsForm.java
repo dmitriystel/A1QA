@@ -20,14 +20,12 @@ public class AlertsFrameWindowsForm extends BaseForm {
     private By browserWindowsButtonLocator = By.xpath("//span[contains(text(), 'Browser')]//parent::li");
     private Button browserWindowsBtn = new Button(browserWindowsButtonLocator, "Browser Windows button");
 
-
     public AlertsFrameWindowsForm() {
         super(alertsFrameAndWindowLabel, "alertsFrameAndWindowsPage");
     }
 
     public AlertsFrameWindowsForm openAlertsForm(){
         CustomLogger.info(this.getFormName() + " : openAlertsForm()");
-//        ConditionalWait.waitToBeClickable(alertsBtn);
         alertsBtn.click();
         return this;
     }
@@ -41,5 +39,4 @@ public class AlertsFrameWindowsForm extends BaseForm {
         browserWindowsBtn.click();
         return this;
     }
-
 }

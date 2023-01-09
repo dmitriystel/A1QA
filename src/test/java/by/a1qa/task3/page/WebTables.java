@@ -1,7 +1,7 @@
 package by.a1qa.task3.page;
 
 import by.a1qa.task3.base.BaseForm;
-import by.a1qa.task3.driver.Driver;
+import by.a1qa.task3.driver.DriverSingleton;
 import by.a1qa.task3.element.Button;
 import by.a1qa.task3.element.Label;
 import by.a1qa.task3.element.TextBox;
@@ -81,7 +81,7 @@ public class WebTables extends BaseForm {
     }
 
     public int getNumOfUserRecords(){
-        return Driver.getInstance().findElements(By.xpath(String.format(userDataDynamicLocator, "@"))).size();
+        return DriverSingleton.getDriver().findElements(By.xpath(String.format(userDataDynamicLocator, "@"))).size();
     }
 
     public void userDeleteButtonClick(String userData){

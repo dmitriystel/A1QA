@@ -10,15 +10,14 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.util.List;
 
-public class Driver {
+public class DriverSingleton {
 
     private static WebDriver driver;
 
-    public static WebDriver getDriver(){
-        return driver;
+    private DriverSingleton(){
     }
 
-    public static WebDriver getInstance(){
+    public static WebDriver getDriver(){
         if(driver == null){
             String browserName = ConfigManager.getBrowserName();
             List<String> options = ConfigManager.getOptions();

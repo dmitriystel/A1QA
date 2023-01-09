@@ -1,6 +1,6 @@
 package by.a1qa.task3.util;
 
-import by.a1qa.task3.driver.Driver;
+import by.a1qa.task3.driver.DriverSingleton;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -8,8 +8,7 @@ public class AlertUtil {
 
     public static boolean isDialogPresent() {
         CustomLogger.info("AlertUtil.isDialogPresent()");
-//        return (ExpectedConditions.alertIsPresent().apply(Driver.getDriver())) != null;
-        return (ExpectedConditions.alertIsPresent().apply(Driver.getInstance())) != null;
+        return (ExpectedConditions.alertIsPresent().apply(DriverSingleton.getDriver())) != null;
     }
 
     public static void acceptAlert(){
@@ -29,5 +28,4 @@ public class AlertUtil {
         Alert alert = ConditionalWait.waitUntilAlertIsPresent();
         alert.sendKeys(keys);
     }
-
 }

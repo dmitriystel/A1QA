@@ -17,8 +17,6 @@ public class ElementsForm extends BaseForm {
         super(elementsLabel, "Elements page");
     }
 
-
-
     public ElementsForm clickWebTablesBtn(){
         webTablesBtn.click();
         return this;

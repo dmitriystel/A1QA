@@ -35,16 +35,13 @@ public class MainPage extends BaseForm {
 
     public MainPage clickAlertsFrameWindowsBtn(){
         CustomLogger.info(this.getFormName() + " : clickAlertsFrameWindowsBtn()");
-//        ConditionalWait.waitToBeClickable(alertsFrameAndWindowsBtn);
         alertsFrameAndWindowsBtn.click();
         return this;
     }
 
     public MainPage clickElementsBtn(){
         CustomLogger.info(this.getFormName() + " : clickElementsBtn()");
-//        ConditionalWait.waitToBeClickable(elementsButton);
         elementsButton.click();
         return this;
     }
-
 }

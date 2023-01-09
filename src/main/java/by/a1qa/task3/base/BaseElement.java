@@ -1,11 +1,12 @@
 package by.a1qa.task3.base;
 
-import by.a1qa.task3.driver.Driver;
+import by.a1qa.task3.driver.DriverSingleton;
 import by.a1qa.task3.util.ConditionalWait;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class BaseElement {
+public abstract class BaseElement {
+
     private By locator;
     private String elementName;
 
@@ -23,17 +24,14 @@ public class BaseElement {
     }
 
     protected WebElement findElement(By locator){
-//        return Driver.getDriver().findElement(locator); // was
-        return Driver.getInstance().findElement(locator);
-
+        return DriverSingleton.getDriver().findElement(locator);
     }
 
     public boolean isDisplayed() {
-//        return !Driver.getDriver().findElements(locator).isEmpty(); // was
-        return !Driver.getInstance().findElements(locator).isEmpty();
+        return !DriverSingleton.getDriver().findElements(locator).isEmpty();
     }
     public void click(){
-        ConditionalWait.waitToBeClickableByLocator(locator);    // todo check if it necessary
+        ConditionalWait.waitToBeClickableByLocator(locator);
         findElement(locator).click();
     }
 

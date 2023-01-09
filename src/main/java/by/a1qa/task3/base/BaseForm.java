@@ -2,7 +2,7 @@ package by.a1qa.task3.base;
 
 import by.a1qa.task3.util.JSUtil;
 
-public class BaseForm {
+public abstract class BaseForm {
 
     private BaseElement element;
     private String formName;
@@ -13,7 +13,6 @@ public class BaseForm {
     }
 
     public BaseForm() {
-
     }
 
     public String getFormName() { return formName; }

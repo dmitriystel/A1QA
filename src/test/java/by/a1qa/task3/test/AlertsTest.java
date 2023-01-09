@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class AlertsTest extends BaseTest{
+
     @Test
     public void testAlerts(){
         CustomLogger.info("Alerts test starts.");
@@ -28,7 +29,6 @@ public class AlertsTest extends BaseTest{
 
         Assert.assertTrue(alertsForm.isPageOpened(), "Alerts form hasn't appeared on page.");
 
-//        alertsForm.scrollDown();
         alertsForm.openAlertYouClickedBtn();
         CustomLogger.info("Step 3. Assert if alert with text 'You clicked a button' is open.");
 
@@ -51,14 +51,12 @@ public class AlertsTest extends BaseTest{
 
         Assert.assertFalse(alertsForm.isAlertPresent(), "Alert isn't closed");
 
-
-//        alertsForm.scrollDown();
         CustomLogger.info("Step 6.2 Assert if 'You selected Ok' appeared on the page.");
 
         Assert.assertEquals(alertsForm.getConfirmBoxResultLabelText(), "You selected Ok",
                 "Alert with text 'You selected Ok' did not appear.");
 
-        alertsForm.openAlertPleaseEnterYourNameBtn();   // 7
+        alertsForm.openAlertPleaseEnterYourNameBtn();
         CustomLogger.info("Step 7. Assert if alert with 'Please enter your name' has appeared on the page.");
 
         Assert.assertEquals(alertsForm.getAlertText(), "Please enter your name",

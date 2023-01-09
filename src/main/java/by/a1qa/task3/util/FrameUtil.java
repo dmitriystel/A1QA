@@ -1,17 +1,16 @@
 package by.a1qa.task3.util;
 
-import by.a1qa.task3.driver.Driver;
+import by.a1qa.task3.driver.DriverSingleton;
 import org.openqa.selenium.By;
 
 public class FrameUtil {
 
     public static void switchToFrame(By frameLocator){
         CustomLogger.info("FrameUtil.switchToFrame(): " + frameLocator);
-        Driver.getInstance().switchTo().frame(Driver.getInstance().findElement(frameLocator));
+        DriverSingleton.getDriver().switchTo().frame(DriverSingleton.getDriver().findElement(frameLocator));
     }
-
     public static void leaveFrame(){
         CustomLogger.info("FrameUtil.leaveFrame()");
-        Driver.getInstance().switchTo().defaultContent();
+        DriverSingleton.getDriver().switchTo().defaultContent();
     }
 }
