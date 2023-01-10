@@ -8,8 +8,10 @@ import org.openqa.selenium.By;
 
 public class AlertsFrameWindowsForm extends BaseForm {
 
-    private static By alertsFrameAndWindowLabelLocator = By.xpath("//div[@class='main-header' and contains(text(), 'Alerts, Frame & Windows')]");
-    private static Label alertsFrameAndWindowLabel = new Label(alertsFrameAndWindowLabelLocator, "alertsFrameAndWindowLabel");
+    private static By alertsFrameAndWindowLabelLocator
+            = By.xpath("//div[@class='main-header' and contains(text(), 'Alerts, Frame & Windows')]");
+    private static Label alertsFrameAndWindowLabel
+            = new Label(alertsFrameAndWindowLabelLocator, "alertsFrameAndWindowLabel");
 
     private By alertsBtnLocator = By.xpath("//span[contains(text(), 'Alerts')]//parent::li");
     private Button alertsBtn = new Button(alertsBtnLocator, "Alerts Button");
@@ -31,11 +33,13 @@ public class AlertsFrameWindowsForm extends BaseForm {
     }
 
     public AlertsFrameWindowsForm nestedFramesButtonClick() {
+        CustomLogger.info(this.getFormName() + " : nestedFramesButtonClick()");
         nestedFramesBtn.click();
         return this;
     }
 
     public AlertsFrameWindowsForm browserWindowsButtonClick() {
+        CustomLogger.info(this.getFormName() + " : browserWindowsButtonClick()");
         browserWindowsBtn.click();
         return this;
     }

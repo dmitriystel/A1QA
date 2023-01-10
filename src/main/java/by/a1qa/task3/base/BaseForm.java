@@ -12,8 +12,7 @@ public abstract class BaseForm {
         this.formName = formName;
     }
 
-    public BaseForm() {
-    }
+    public BaseForm() {}
 
     public String getFormName() { return formName; }
 

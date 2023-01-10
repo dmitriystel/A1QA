@@ -7,6 +7,7 @@ import by.a1qa.task3.element.Label;
 import by.a1qa.task3.element.TextBox;
 import by.a1qa.task3.model.User;
 import by.a1qa.task3.util.ConditionalWait;
+import by.a1qa.task3.util.CustomLogger;
 import org.openqa.selenium.By;
 
 public class WebTables extends BaseForm {
@@ -15,7 +16,7 @@ public class WebTables extends BaseForm {
     private static Label webTablesLabel = new Label(webTablesLabelLocator, "webTablesLabel");
 
     private By addNewRecordButtonLocator = By.id("addNewRecordButton");
-    private Button addNewRecordButton = new Button(addNewRecordButtonLocator, "add new record button");
+    private Button addNewRecordBtn = new Button(addNewRecordButtonLocator, "add new record button");
 
     private By registrationFormLabelLocator = By.xpath("//div[contains(@class, 'modal-dialog')]");
     private Label registrationFormLabel = new Label(registrationFormLabelLocator, "registration form label");
@@ -39,27 +40,29 @@ public class WebTables extends BaseForm {
     private TextBox departmentTextBox = new TextBox(departmentInputLocator, "Department input field");
 
     private By submitButtonLocator = By.id("submit");
-    private Button submitButton = new Button(submitButtonLocator, "Submit button");
+    private Button submitBtn = new Button(submitButtonLocator, "Submit button");
 
     private String userDataDynamicLocator = "//div[contains(text(),'%s')]";
     private String userDeleteButtonDynamicLocator = userDataDynamicLocator
             + "//parent::div//span[contains(@id, 'delete-record')]";
-
 
     public WebTables() {
         super(webTablesLabel, "webTablesLabel");
     }
 
     public WebTables clickAddNewRecordBtn(){
-        addNewRecordButton.click();
+        CustomLogger.info(this.getFormName() + " : clickAddNewRecordBtn()");
+        addNewRecordBtn.click();
         return this;
     }
 
     public boolean isRegistrationFormLabelOpen(){
+        CustomLogger.info(this.getFormName() + " : isRegistrationFormLabelOpen()");
         return  registrationFormLabel.isDisplayed();
     }
 
     public WebTables fillInRegistrationForm(User user){
+        CustomLogger.info(this.getFormName() + " : fillInRegistrationForm(User user)");
         firstNameTextBox.sendText(user.getFirstName());
         lastNameTextBox.sendText(user.getLastName());
         userEmailTextBox.sendText(user.getEmail());
@@ -69,28 +72,29 @@ public class WebTables extends BaseForm {
         return this;
     }
 
-    public WebTables submitButtonClick(){
-        submitButton.click();
+    public WebTables clickSubmitBtn(){
+        CustomLogger.info(this.getFormName() + " : clickSubmitBtn()");
+        submitBtn.click();
         ConditionalWait.waitElementDisappears(registrationFormLabel);
         return this;
     }
 
     public boolean isUserDataLabelOpen(String userData) {
+        CustomLogger.info(this.getFormName() + " : isUserDataLabelOpen(String userData)");
         return new Label(By.xpath(String.format(userDataDynamicLocator, userData)),
                 "User data dynamic label : " + userData).isDisplayed();
     }
 
     public int getNumOfUserRecords(){
+        CustomLogger.info(this.getFormName() + " : getNumOfUserRecords()");
         return DriverSingleton.getDriver().findElements(By.xpath(String.format(userDataDynamicLocator, "@"))).size();
     }
 
-    public void userDeleteButtonClick(String userData){
-        Button userDeleteButton = new Button(By.xpath(String.format(userDeleteButtonDynamicLocator, userData)),
+    public void clickUserDeleteBtn(String userData){
+        Button userDeleteBtn = new Button(By.xpath(String.format(userDeleteButtonDynamicLocator, userData)),
                 "specific user delete button : " + userData);
-        userDeleteButton.click();
-        ConditionalWait.waitElementDisappears(userDeleteButton);
+        CustomLogger.info(this.getFormName() + " : clickUserDeleteBtn(String userData)");
+        userDeleteBtn.click();
+        ConditionalWait.waitElementDisappears(userDeleteBtn);
     }
-
-
-
 }

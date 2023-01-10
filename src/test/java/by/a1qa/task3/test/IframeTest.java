@@ -5,7 +5,7 @@ import by.a1qa.task3.util.CustomLogger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class IframeTest {
+public class IframeTest extends BaseTest {
 
     @Test
     public void testIframe(){
@@ -40,7 +40,7 @@ public class IframeTest {
 
         parentFramePage.leaveChildFrame();
         nestedFramesForm.scrollDown();
-        nestedFramesForm.framesButtonClick();
+        nestedFramesForm.clickFramesBtn();
         FramesForm framesForm = new FramesForm();
         CustomLogger.info("Step 3.1. Assert if frames form is open");
 

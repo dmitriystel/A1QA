@@ -19,13 +19,15 @@ public class AlertsForm extends BaseForm {
     private Button confirmBoxBtn = new Button(confirmBoxBtnLocator, "confirm box will appear button");
 
     private By confirmBoxResultLabelLocator = By.id("confirmResult");
-    private Label confirmBoxResultLabel = new Label(confirmBoxResultLabelLocator, "Confirm box result after alert");
+    private Label confirmBoxResultLabel
+            = new Label(confirmBoxResultLabelLocator, "Confirm box result after alert");
 
     private By promptBoxBtnLocator = By.id("promtButton");
     private Button promptBoxBtn = new Button(promptBoxBtnLocator, "prompt box will appear button");
 
     private By promptBoxResultLabelLocator = By.id("promptResult");
-    private Label promptBoxResultLabel = new Label(promptBoxResultLabelLocator, "Prompt box result after alert");
+    private Label promptBoxResultLabel
+            = new Label(promptBoxResultLabelLocator, "Prompt box result after alert");
 
     public AlertsForm() {
         super(alertsLabel, "alertsForm");
@@ -37,7 +39,10 @@ public class AlertsForm extends BaseForm {
         return this;
     }
 
-    public String getAlertText() {return AlertUtil.getText();}
+    public String getAlertText() {
+        CustomLogger.info(this.getFormName() + " : getAlertText()");
+        return AlertUtil.getText();
+    }
 
     public AlertsForm closeAlert(){
         CustomLogger.info(this.getFormName() + " : closeAlert()");
@@ -45,7 +50,10 @@ public class AlertsForm extends BaseForm {
         return this;
     }
 
-    public boolean isAlertPresent(){return AlertUtil.isDialogPresent();}
+    public boolean isAlertPresent(){
+        CustomLogger.info(this.getFormName() + " : isAlertPresent()");
+        return AlertUtil.isDialogPresent();
+    }
 
     public AlertsForm openAlertDoYouConfirmActionBtn(){
         CustomLogger.info(this.getFormName() + " : openAlertDoYouConfirmActionBtn()");
@@ -65,9 +73,13 @@ public class AlertsForm extends BaseForm {
     }
 
     public AlertsForm alertSendText(String text) {
+        CustomLogger.info(this.getFormName() + " : alertSendText(String text)" );
         AlertUtil.sendKeys(text);
         return this;
     }
 
-    public String getPromptBoxResultLabelText() { return promptBoxResultLabel.getText(); }
+    public String getPromptBoxResultLabelText() {
+        CustomLogger.info(this.getFormName() + " : getPromptBoxResultLabelText()" );
+        return promptBoxResultLabel.getText();
+    }
 }

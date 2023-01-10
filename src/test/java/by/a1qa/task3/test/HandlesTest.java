@@ -58,7 +58,7 @@ public class HandlesTest extends BaseTest{
 
         initialTab = BrowserUtil.getCurrentTabHandle();
         tabCountBefore = BrowserUtil.getTabCount();
-        linksForm.homeButtonClick();
+        linksForm.clickHomeBtn();
         CustomLogger.info("Step 6. New tab with main page is open.");
         BrowserUtil.switchToOtherTab(initialTab);
         tabCountAfter = BrowserUtil.getTabCount();

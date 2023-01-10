@@ -30,6 +30,7 @@ public abstract class BaseElement {
     public boolean isDisplayed() {
         return !DriverSingleton.getDriver().findElements(locator).isEmpty();
     }
+
     public void click(){
         ConditionalWait.waitToBeClickableByLocator(locator);
         findElement(locator).click();

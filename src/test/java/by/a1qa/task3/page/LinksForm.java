@@ -3,6 +3,7 @@ package by.a1qa.task3.page;
 import by.a1qa.task3.base.BaseForm;
 import by.a1qa.task3.element.Button;
 import by.a1qa.task3.element.Label;
+import by.a1qa.task3.util.CustomLogger;
 import org.openqa.selenium.By;
 
 public class LinksForm extends BaseForm {
@@ -15,7 +16,8 @@ public class LinksForm extends BaseForm {
 
     public LinksForm(){super(linksFormLabel, "Links");}
 
-    public LinksForm homeButtonClick(){
+    public LinksForm clickHomeBtn(){
+        CustomLogger.info(this.getFormName() + " : clickHomeBtn()");
         homeBtn.click();
         return this;
     }

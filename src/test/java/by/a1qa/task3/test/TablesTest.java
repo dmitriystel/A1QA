@@ -49,7 +49,7 @@ public class TablesTest extends BaseTest{
 
         webTables
                 .fillInRegistrationForm(user)
-                .submitButtonClick();
+                .clickSubmitBtn();
         CustomLogger.info("Step 4. Assert if the registration form has closed.");
 
         Assert.assertFalse(webTables.isRegistrationFormLabelOpen(),
@@ -61,7 +61,7 @@ public class TablesTest extends BaseTest{
                 "Data of user has not appeared in a table!");
 
         int numberOfRecordsBeforeDelete = webTables.getNumOfUserRecords();
-        webTables.userDeleteButtonClick(user.getEmail());
+        webTables.clickUserDeleteBtn(user.getEmail());
         CustomLogger.info("Step 6. Assert if number of records in table has changed.");
         int numberOfRecordsAfterDelete = webTables.getNumOfUserRecords();
 

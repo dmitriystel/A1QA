@@ -3,6 +3,7 @@ package by.a1qa.task3.page;
 import by.a1qa.task3.base.BaseForm;
 import by.a1qa.task3.element.Button;
 import by.a1qa.task3.element.Label;
+import by.a1qa.task3.util.CustomLogger;
 import org.openqa.selenium.By;
 
 public class ElementsForm extends BaseForm {
@@ -18,6 +19,7 @@ public class ElementsForm extends BaseForm {
     }
 
     public ElementsForm clickWebTablesBtn(){
+        CustomLogger.info(this.getFormName() + " : clickWebTablesBtn()");
         webTablesBtn.click();
         return this;
     }

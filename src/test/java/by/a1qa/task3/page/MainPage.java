@@ -4,7 +4,6 @@ import by.a1qa.task3.base.BaseForm;
 import by.a1qa.task3.element.Button;
 import by.a1qa.task3.element.Label;
 import by.a1qa.task3.util.BrowserUtil;
-import by.a1qa.task3.util.ConditionalWait;
 import by.a1qa.task3.util.ConfigManager;
 import by.a1qa.task3.util.CustomLogger;
 import org.openqa.selenium.By;
@@ -25,7 +24,6 @@ public class MainPage extends BaseForm {
     public MainPage() {
         super(seleniumCertificationTrainingLabel, "mainPage");
     }
-
 
     public MainPage navigateToMainPage() {
         CustomLogger.info(this.getFormName() + " : navigateToMainPage");

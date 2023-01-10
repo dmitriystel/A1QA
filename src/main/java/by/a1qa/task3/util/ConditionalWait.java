@@ -19,12 +19,11 @@ public class ConditionalWait {
     }
 
     public static void waitElementDisappears(BaseElement element){
-        new WebDriverWait(DriverSingleton.getDriver(), duration).until(ExpectedConditions
-                .invisibilityOfElementLocated(element.getLocator()));
+        new WebDriverWait(DriverSingleton.getDriver(), duration)
+                .until(ExpectedConditions.invisibilityOfElementLocated(element.getLocator()));
     }
 
     public static Alert waitUntilAlertIsPresent(){
-        return new WebDriverWait(DriverSingleton.getDriver(), duration)
-                .until((ExpectedConditions.alertIsPresent()));
+        return new WebDriverWait(DriverSingleton.getDriver(), duration).until((ExpectedConditions.alertIsPresent()));
     }
 }

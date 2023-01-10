@@ -2,6 +2,7 @@ package by.a1qa.task3.page;
 
 import by.a1qa.task3.base.BaseFrame;
 import by.a1qa.task3.element.Label;
+import by.a1qa.task3.util.CustomLogger;
 import org.openqa.selenium.By;
 
 public class LowerFrameForm extends BaseFrame {
@@ -15,7 +16,7 @@ public class LowerFrameForm extends BaseFrame {
     }
 
     public String getLowerFrameLabelText(){
+        CustomLogger.info(this.getFormName() + " : getLowerFrameLabelText()");
         return this.getElement().getText();
     }
-
 }
