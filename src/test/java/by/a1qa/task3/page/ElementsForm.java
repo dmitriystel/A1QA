@@ -23,5 +23,4 @@ public class ElementsForm extends BaseForm {
         webTablesBtn.click();
         return this;
     }
-
 }

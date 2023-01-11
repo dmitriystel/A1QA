@@ -6,7 +6,7 @@ import by.a1qa.task3.element.Label;
 import by.a1qa.task3.util.CustomLogger;
 import org.openqa.selenium.By;
 
-public class BrowserWindowsForm  extends BaseForm {
+public class BrowserWindowsForm extends BaseForm {
 
     private static By browserWindowsFormLabelLocator = By.xpath("//div[contains(text(),'Browser')]/parent::div");
     private static Label browserWindowsFormLabel

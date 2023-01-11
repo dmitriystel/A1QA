@@ -1,0 +1,152 @@
+09:33:39 INFO  by.a1qa.task3.util.CustomLogger - Alerts test starts.
+09:33:39 INFO  by.a1qa.task3.util.CustomLogger - mainPage : navigateToMainPage
+09:33:39 INFO  by.a1qa.task3.util.CustomLogger - BrowserUtil.goToURL(): https://demoqa.com
+09:34:11 INFO  by.a1qa.task3.util.CustomLogger - Step 1. Assert if the main page is open.
+09:34:12 INFO  by.a1qa.task3.util.CustomLogger - mainPage : clickAlertsFrameWindowsBtn()
+09:34:17 INFO  by.a1qa.task3.util.CustomLogger - alertsFrameAndWindowsPage : openAlertsForm()
+09:34:17 INFO  by.a1qa.task3.util.CustomLogger - Step 2. Assert if the alerts form has appeared.
+09:34:18 INFO  by.a1qa.task3.util.CustomLogger - alertsForm : openAlertYouClickedBtn()
+09:34:18 INFO  by.a1qa.task3.util.CustomLogger - Step 3. Assert if alert with text 'You clicked a button' is open.
+09:34:18 INFO  by.a1qa.task3.util.CustomLogger - alertsForm : getAlertText()
+09:34:18 INFO  by.a1qa.task3.util.CustomLogger - AlertUtil.getText()
+09:34:19 INFO  by.a1qa.task3.util.CustomLogger - alertsForm : closeAlert()
+09:34:19 INFO  by.a1qa.task3.util.CustomLogger - AlertUtil.acceptAlert()
+09:34:19 INFO  by.a1qa.task3.util.CustomLogger - Step 4. Assert if alert is closed.
+09:34:19 INFO  by.a1qa.task3.util.CustomLogger - alertsForm : isAlertPresent()
+09:34:19 INFO  by.a1qa.task3.util.CustomLogger - AlertUtil.isDialogPresent()
+09:34:19 INFO  by.a1qa.task3.util.CustomLogger - alertsForm : openAlertDoYouConfirmActionBtn()
+09:34:19 INFO  by.a1qa.task3.util.CustomLogger - Step 5. Assert if alert with text 'Do you confirm actions?' is open.
+09:34:19 INFO  by.a1qa.task3.util.CustomLogger - alertsForm : getAlertText()
+09:34:19 INFO  by.a1qa.task3.util.CustomLogger - AlertUtil.getText()
+09:34:19 INFO  by.a1qa.task3.util.CustomLogger - alertsForm : closeAlert()
+09:34:19 INFO  by.a1qa.task3.util.CustomLogger - AlertUtil.acceptAlert()
+09:34:19 INFO  by.a1qa.task3.util.CustomLogger - Step 6.1 Assert if alert is closed.
+09:34:19 INFO  by.a1qa.task3.util.CustomLogger - alertsForm : isAlertPresent()
+09:34:19 INFO  by.a1qa.task3.util.CustomLogger - AlertUtil.isDialogPresent()
+09:34:19 INFO  by.a1qa.task3.util.CustomLogger - Step 6.2 Assert if 'You selected Ok' appeared on the page.
+09:34:19 INFO  by.a1qa.task3.util.CustomLogger - alertsForm : getConfirmBoxResultLabelText()
+09:34:20 INFO  by.a1qa.task3.util.CustomLogger - alertsForm : openAlertPleaseEnterYourNameBtn()
+09:34:20 INFO  by.a1qa.task3.util.CustomLogger - Step 7. Assert if alert with 'Please enter your name' has appeared on the page.
+09:34:20 INFO  by.a1qa.task3.util.CustomLogger - alertsForm : getAlertText()
+09:34:20 INFO  by.a1qa.task3.util.CustomLogger - AlertUtil.getText()
+09:34:20 INFO  by.a1qa.task3.util.CustomLogger - alertsForm : alertSendText(String text)
+09:34:20 INFO  by.a1qa.task3.util.CustomLogger - AlertUtil.sendKeys() : WeaxMITqGl
+09:34:20 INFO  by.a1qa.task3.util.CustomLogger - alertsForm : closeAlert()
+09:34:20 INFO  by.a1qa.task3.util.CustomLogger - AlertUtil.acceptAlert()
+09:34:20 INFO  by.a1qa.task3.util.CustomLogger - Step 8. Assert if alert is closed.
+09:34:20 INFO  by.a1qa.task3.util.CustomLogger - alertsForm : isAlertPresent()
+09:34:20 INFO  by.a1qa.task3.util.CustomLogger - AlertUtil.isDialogPresent()
+09:34:20 INFO  by.a1qa.task3.util.CustomLogger - Step 9. Assert if the appeared text equals to the one you entered before.
+09:34:20 INFO  by.a1qa.task3.util.CustomLogger - alertsForm : getPromptBoxResultLabelText()
+09:34:20 INFO  by.a1qa.task3.util.CustomLogger - Alerts test is finished.
+09:34:20 INFO  by.a1qa.task3.util.CustomLogger - BrowserUtil.closeBrowser()
+09:35:40 INFO  by.a1qa.task3.util.CustomLogger - Handles test starts.
+09:35:40 INFO  by.a1qa.task3.util.CustomLogger - mainPage : navigateToMainPage
+09:35:40 INFO  by.a1qa.task3.util.CustomLogger - BrowserUtil.goToURL(): https://demoqa.com
+09:35:50 INFO  by.a1qa.task3.util.CustomLogger - Step 1. Assert if the main page is open.
+09:35:50 INFO  by.a1qa.task3.util.CustomLogger - mainPage : clickAlertsFrameWindowsBtn()
+09:35:51 INFO  by.a1qa.task3.util.CustomLogger - alertsFrameAndWindowsPage : browserWindowsButtonClick()
+09:35:55 INFO  by.a1qa.task3.util.CustomLogger - Step 2. Page with Browser Windows form is open.
+09:35:55 INFO  by.a1qa.task3.util.CustomLogger - BrowserUtil.getWindowHandle()
+09:35:55 INFO  by.a1qa.task3.util.CustomLogger - Browser Windows : newTabBtnClick()
+09:35:56 INFO  by.a1qa.task3.util.CustomLogger - BrowserUtil.switchToNewTab() : true
+09:35:56 INFO  by.a1qa.task3.util.CustomLogger - Step 3. New tab with sample page is open.
+09:35:56 INFO  by.a1qa.task3.util.CustomLogger - Sample page : getPageLabelText()
+09:35:56 INFO  by.a1qa.task3.util.CustomLogger - BrowserUtil.closeCurrentTab()
+09:35:56 INFO  by.a1qa.task3.util.CustomLogger - BrowserUtil.switchToTab()
+09:35:56 INFO  by.a1qa.task3.util.CustomLogger - Step 4. Page with Browser Windows form is open.
+09:35:57 INFO  by.a1qa.task3.util.CustomLogger - Browser Windows : elementsButtonClick()
+09:35:58 INFO  by.a1qa.task3.util.CustomLogger - Browser Windows : linksButtonClick()
+09:35:58 INFO  by.a1qa.task3.util.CustomLogger - Step 5. Page with Links form is open.
+09:35:58 INFO  by.a1qa.task3.util.CustomLogger - BrowserUtil.getWindowHandle()
+09:35:58 INFO  by.a1qa.task3.util.CustomLogger - Links : clickHomeBtn()
+09:35:59 INFO  by.a1qa.task3.util.CustomLogger - Step 6. New tab with main page is open.
+09:36:01 INFO  by.a1qa.task3.util.CustomLogger - BrowserUtil.switchToNewTab() : true
+09:36:06 INFO  by.a1qa.task3.util.CustomLogger - BrowserUtil.switchToTab()
+09:36:06 INFO  by.a1qa.task3.util.CustomLogger - Step 7. Page with Links form is open.
+09:36:06 INFO  by.a1qa.task3.util.CustomLogger - End of a handles test
+09:36:06 INFO  by.a1qa.task3.util.CustomLogger - BrowserUtil.closeBrowser()
+09:36:41 INFO  by.a1qa.task3.util.CustomLogger - Alerts test starts.
+09:36:41 INFO  by.a1qa.task3.util.CustomLogger - mainPage : navigateToMainPage
+09:36:42 INFO  by.a1qa.task3.util.CustomLogger - BrowserUtil.goToURL(): https://demoqa.com
+09:37:01 INFO  by.a1qa.task3.util.CustomLogger - Step 1. Assert if the main page is open.
+09:37:01 INFO  by.a1qa.task3.util.CustomLogger - mainPage : clickAlertsFrameWindowsBtn()
+09:37:02 INFO  by.a1qa.task3.util.CustomLogger - alertsFrameAndWindowsPage : nestedFramesButtonClick()
+09:37:05 INFO  by.a1qa.task3.util.CustomLogger - Step 2. Assert if page with Nested Frames form is open.
+09:37:05 INFO  by.a1qa.task3.util.CustomLogger - Step 2. Assert if messages 'Parent frame' and 'Child Iframe' are present on the page
+09:37:06 INFO  by.a1qa.task3.util.CustomLogger - FrameUtil.switchToFrame(): By.id: frame1
+09:37:06 INFO  by.a1qa.task3.util.CustomLogger - Parent Frame Page : getParentFrameLabelText()
+09:37:07 INFO  by.a1qa.task3.util.CustomLogger - Parent Frame Page : switchToChildFrame()
+09:37:07 INFO  by.a1qa.task3.util.CustomLogger - FrameUtil.switchToFrame(): By.xpath: //body/iframe
+09:37:07 INFO  by.a1qa.task3.util.CustomLogger - Parent Frame Page : getChildIframeLabelText()
+09:37:07 INFO  by.a1qa.task3.util.CustomLogger - Parent Frame Page : leaveChildFrame()
+09:37:07 INFO  by.a1qa.task3.util.CustomLogger - FrameUtil.leaveFrame()
+09:37:07 INFO  by.a1qa.task3.util.CustomLogger - nestedFramesLabel : clickFramesBtn()
+09:37:07 INFO  by.a1qa.task3.util.CustomLogger - Step 3.1. Assert if frames form is open
+09:37:08 INFO  by.a1qa.task3.util.CustomLogger - Step 3.2. Assert if message from upper frame equals to the message from lower frame
+09:37:08 INFO  by.a1qa.task3.util.CustomLogger - FrameUtil.switchToFrame(): By.id: frame1
+09:37:08 INFO  by.a1qa.task3.util.CustomLogger - Upper Frame Page : getUpperFrameLabelText()
+09:37:08 INFO  by.a1qa.task3.util.CustomLogger - FrameUtil.leaveFrame()
+09:37:09 INFO  by.a1qa.task3.util.CustomLogger - FrameUtil.switchToFrame(): By.id: frame2
+09:37:09 INFO  by.a1qa.task3.util.CustomLogger - Lower Frame Page : getLowerFrameLabelText()
+09:37:09 INFO  by.a1qa.task3.util.CustomLogger - FrameUtil.leaveFrame()
+09:37:09 INFO  by.a1qa.task3.util.CustomLogger - End of an Iframe test
+09:40:16 INFO  by.a1qa.task3.util.CustomLogger - Tables test starts.
+09:40:16 INFO  by.a1qa.task3.util.CustomLogger - mainPage : navigateToMainPage
+09:40:16 INFO  by.a1qa.task3.util.CustomLogger - BrowserUtil.goToURL(): https://demoqa.com
+09:40:27 INFO  by.a1qa.task3.util.CustomLogger - Step 1. Assert if the main page is open.
+09:40:28 INFO  by.a1qa.task3.util.CustomLogger - mainPage : clickElementsBtn()
+09:40:30 INFO  by.a1qa.task3.util.CustomLogger - Elements page : clickWebTablesBtn()
+09:40:33 INFO  by.a1qa.task3.util.CustomLogger - Step 2. Assert if the web tables form is open.
+09:40:33 INFO  by.a1qa.task3.util.CustomLogger - webTablesLabel : clickAddNewRecordBtn()
+09:40:35 INFO  by.a1qa.task3.util.CustomLogger - Step 3. Assert if the registration form has appeared on the page.
+09:40:35 INFO  by.a1qa.task3.util.CustomLogger - webTablesLabel : isRegistrationFormLabelOpen()
+09:40:35 INFO  by.a1qa.task3.util.CustomLogger - webTablesLabel : fillInRegistrationForm(User user)
+09:40:35 INFO  by.a1qa.task3.util.CustomLogger - First name input field.sendText(): Jon
+09:40:35 INFO  by.a1qa.task3.util.CustomLogger - Last name input field.sendText(): Snow
+09:40:36 INFO  by.a1qa.task3.util.CustomLogger - User email input field.sendText(): knownothing@gmail.com
+09:40:36 INFO  by.a1qa.task3.util.CustomLogger - Age input field.sendText(): 30
+09:40:36 INFO  by.a1qa.task3.util.CustomLogger - Salary input field.sendText(): 3000
+09:40:36 INFO  by.a1qa.task3.util.CustomLogger - Department input field.sendText(): alpha
+09:40:37 INFO  by.a1qa.task3.util.CustomLogger - webTablesLabel : clickSubmitBtn()
+09:40:37 INFO  by.a1qa.task3.util.CustomLogger - Step 4. Assert if the registration form has closed.
+09:40:37 INFO  by.a1qa.task3.util.CustomLogger - webTablesLabel : isRegistrationFormLabelOpen()
+09:40:37 INFO  by.a1qa.task3.util.CustomLogger - Step 5. Assert if data of user has appeared in a table.
+09:40:37 INFO  by.a1qa.task3.util.CustomLogger - webTablesLabel : isUserDataLabelOpen(String userData)
+09:40:37 INFO  by.a1qa.task3.util.CustomLogger - webTablesLabel : getNumOfUserRecords()
+09:40:37 INFO  by.a1qa.task3.util.CustomLogger - webTablesLabel : clickUserDeleteBtn(String userData)
+09:40:38 INFO  by.a1qa.task3.util.CustomLogger - Step 6. Assert if number of records in table has changed.
+09:40:38 INFO  by.a1qa.task3.util.CustomLogger - webTablesLabel : getNumOfUserRecords()
+09:40:38 INFO  by.a1qa.task3.util.CustomLogger - Step 7. Assert if data of user has been deleted from the table.
+09:40:38 INFO  by.a1qa.task3.util.CustomLogger - webTablesLabel : isUserDataLabelOpen(String userData)
+09:40:38 INFO  by.a1qa.task3.util.CustomLogger - End of a tables test
+09:40:38 INFO  by.a1qa.task3.util.CustomLogger - Tables test starts.
+09:40:38 INFO  by.a1qa.task3.util.CustomLogger - mainPage : navigateToMainPage
+09:40:38 INFO  by.a1qa.task3.util.CustomLogger - BrowserUtil.goToURL(): https://demoqa.com
+09:40:39 INFO  by.a1qa.task3.util.CustomLogger - Step 1. Assert if the main page is open.
+09:40:39 INFO  by.a1qa.task3.util.CustomLogger - mainPage : clickElementsBtn()
+09:40:39 INFO  by.a1qa.task3.util.CustomLogger - Elements page : clickWebTablesBtn()
+09:40:40 INFO  by.a1qa.task3.util.CustomLogger - Step 2. Assert if the web tables form is open.
+09:40:40 INFO  by.a1qa.task3.util.CustomLogger - webTablesLabel : clickAddNewRecordBtn()
+09:40:40 INFO  by.a1qa.task3.util.CustomLogger - Step 3. Assert if the registration form has appeared on the page.
+09:40:40 INFO  by.a1qa.task3.util.CustomLogger - webTablesLabel : isRegistrationFormLabelOpen()
+09:40:40 INFO  by.a1qa.task3.util.CustomLogger - webTablesLabel : fillInRegistrationForm(User user)
+09:40:40 INFO  by.a1qa.task3.util.CustomLogger - First name input field.sendText(): Buttercup
+09:40:41 INFO  by.a1qa.task3.util.CustomLogger - Last name input field.sendText(): Cumbersnatch
+09:40:41 INFO  by.a1qa.task3.util.CustomLogger - User email input field.sendText(): BudapestCandygram@mail.io
+09:40:41 INFO  by.a1qa.task3.util.CustomLogger - Age input field.sendText(): 41
+09:40:41 INFO  by.a1qa.task3.util.CustomLogger - Salary input field.sendText(): 2000
+09:40:42 INFO  by.a1qa.task3.util.CustomLogger - Department input field.sendText(): beta
+09:40:42 INFO  by.a1qa.task3.util.CustomLogger - webTablesLabel : clickSubmitBtn()
+09:40:43 INFO  by.a1qa.task3.util.CustomLogger - Step 4. Assert if the registration form has closed.
+09:40:43 INFO  by.a1qa.task3.util.CustomLogger - webTablesLabel : isRegistrationFormLabelOpen()
+09:40:44 INFO  by.a1qa.task3.util.CustomLogger - Step 5. Assert if data of user has appeared in a table.
+09:40:44 INFO  by.a1qa.task3.util.CustomLogger - webTablesLabel : isUserDataLabelOpen(String userData)
+09:40:44 INFO  by.a1qa.task3.util.CustomLogger - webTablesLabel : getNumOfUserRecords()
+09:40:44 INFO  by.a1qa.task3.util.CustomLogger - webTablesLabel : clickUserDeleteBtn(String userData)
+09:40:44 INFO  by.a1qa.task3.util.CustomLogger - Step 6. Assert if number of records in table has changed.
+09:40:44 INFO  by.a1qa.task3.util.CustomLogger - webTablesLabel : getNumOfUserRecords()
+09:40:44 INFO  by.a1qa.task3.util.CustomLogger - Step 7. Assert if data of user has been deleted from the table.
+09:40:44 INFO  by.a1qa.task3.util.CustomLogger - webTablesLabel : isUserDataLabelOpen(String userData)
+09:40:44 INFO  by.a1qa.task3.util.CustomLogger - End of a tables test
+09:40:44 INFO  by.a1qa.task3.util.CustomLogger - BrowserUtil.closeBrowser()

@@ -14,5 +14,4 @@ public class TextBox extends BaseElement {
         CustomLogger.info(this.getElementName() + ".sendText(): " + text);
         findElement(this.getLocator()).sendKeys(text);
     }
-
 }
