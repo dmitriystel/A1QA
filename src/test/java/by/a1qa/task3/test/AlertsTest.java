@@ -17,7 +17,7 @@ public class AlertsTest extends BaseTest{
         CustomLogger.info("Alerts test starts.");
         MainPage mainPage = new MainPage();
         BrowserUtil.goToURL(ConfigManager.getURL());
-//        mainPage.navigateToMainPage();
+
         CustomLogger.info("Step 1. Assert if the main page is open.");
 
         Assert.assertTrue(mainPage.isPageOpened(), "Main page isn't open.");
