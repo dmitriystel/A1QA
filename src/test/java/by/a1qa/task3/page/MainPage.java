@@ -25,12 +25,6 @@ public class MainPage extends BaseForm {
         super(seleniumCertificationTrainingLabel, "mainPage");
     }
 
-//    public MainPage navigateToMainPage() throws IOException, ParseException {
-//        CustomLogger.info(this.getFormName() + " : navigateToMainPage");
-//        BrowserUtil.goToURL(ConfigManager.getURL());
-//        return this;
-//    }
-
     public MainPage clickAlertsFrameWindowsBtn() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : clickAlertsFrameWindowsBtn()");
         alertsFrameAndWindowsBtn.click();

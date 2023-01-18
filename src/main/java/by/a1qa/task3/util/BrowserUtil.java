@@ -12,11 +12,6 @@ public class BrowserUtil {
         DriverSingleton.getDriver().navigate().to(url);
     }
 
-//    public static void closeBrowser() throws IOException, ParseException {
-//        CustomLogger.info("BrowserUtil.closeBrowser()");
-//        DriverSingleton.getDriver().quit();
-//    }
-
     public static void closeCurrentTab() throws IOException, ParseException {
         CustomLogger.info("BrowserUtil.closeCurrentTab()");
         DriverSingleton.getDriver().close();
@@ -31,30 +26,7 @@ public class BrowserUtil {
         return DriverSingleton.getDriver().getWindowHandles().size();
     }
 
-
-
-//    public static boolean switchToOtherTab(String currentTabHandle){
-//        if(DriverSingleton.getDriver().getWindowHandles().size() < 2){
-//            CustomLogger.error("BrowserUtil.switchToNewTab() : false");
-//            return false;
-//        }
-//        for (String windowHandle : DriverSingleton.getDriver().getWindowHandles()) {
-//            if(!currentTabHandle.contentEquals(windowHandle)) {
-//                CustomLogger.info("BrowserUtil.switchToNewTab() : true");
-//                DriverSingleton.getDriver().switchTo().window(windowHandle);
-//                break;
-//            }
-//        }
-//        return true;
-//    }
-
-
-
     public static void switchToOtherTab(String currentTabHandle) throws IOException, ParseException {
-//        if(DriverSingleton.getDriver().getWindowHandles().size() < 2){
-//            CustomLogger.error("BrowserUtil.switchToNewTab() : false");
-//            return false;
-//        }
         for (String windowHandle : DriverSingleton.getDriver().getWindowHandles()) {
             if(!currentTabHandle.contentEquals(windowHandle)) {
                 CustomLogger.info("BrowserUtil.switchToNewTab() : true");
@@ -63,13 +35,6 @@ public class BrowserUtil {
             }
         }
     }
-
-
-
-
-
-
-
 
     public static void switchToTab(String tabHandle) throws IOException, ParseException {
         for (String windowHandle : DriverSingleton.getDriver().getWindowHandles()) {

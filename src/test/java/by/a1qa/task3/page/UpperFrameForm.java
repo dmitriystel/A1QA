@@ -19,6 +19,7 @@ public class UpperFrameForm extends BaseFrame {
 
     public String getUpperFrameLabelText() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : getUpperFrameLabelText()");
-        return this.getElement().getText();
+//        return this.getElement().getText();
+        return upperFrameLabel.getText();
     }
 }

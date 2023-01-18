@@ -2,6 +2,7 @@ package by.a1qa.task3.base;
 
 import by.a1qa.task3.driver.DriverSingleton;
 import by.a1qa.task3.util.ConditionalWait;
+import by.a1qa.task3.util.JSUtil;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -35,6 +36,7 @@ public abstract class BaseElement {
     }
 
     public void click() throws IOException, ParseException {
+        JSUtil.pageScrollDown(locator);
         ConditionalWait.waitToBeClickableByLocator(locator);
         findElement(locator).click();
     }

@@ -31,13 +31,11 @@ public class TablesTest extends BaseTest{
     public void testTables(User user) throws IOException, ParseException {
         CustomLogger.info("Tables test starts.");
         MainPage mainPage = new MainPage();
-//        mainPage.navigateToMainPage();
         BrowserUtil.goToURL(ConfigManager.getURL());
         CustomLogger.info("Step 1. Assert if the main page is open.");
 
         Assert.assertTrue(mainPage.isPageOpened(), "Main page isn't open.");
 
-        mainPage.scrollDown();
         mainPage.clickElementsBtn();
         ElementsForm elementsForm = new ElementsForm();
         elementsForm.clickWebTablesBtn();

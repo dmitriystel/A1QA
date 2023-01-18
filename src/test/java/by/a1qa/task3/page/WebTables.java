@@ -16,26 +16,16 @@ import java.io.IOException;
 public class WebTables extends BaseForm {
 
     private static Label webTablesLabel
-            = new Label(By.xpath("//div[@class='main-header' and contains(text(), 'Web Tables')]"), "webTablesLabel");
-
+            = new Label(By.xpath("//div[contains(@class, 'main-header') and contains(text(), 'Web Tables')]"), "webTablesLabel");
     private Button addNewRecordBtn = new Button(By.id("addNewRecordButton"), "add new record button");
-
     private Label registrationFormLabel = new Label(By.xpath("//div[contains(@class, 'modal-dialog')]"), "registration form label");
-
     private TextBox firstNameTextBox = new TextBox(By.id("firstName"), "First name input field");
-
     private TextBox lastNameTextBox = new TextBox(By.id("lastName"), "Last name input field");
-
     private TextBox userEmailTextBox = new TextBox(By.id("userEmail"), "User email input field");
-
     private TextBox ageTextBox = new TextBox(By.id("age"), "Age input field");
-
     private TextBox salaryTextBox = new TextBox(By.id("salary"), "Salary input field");
-
     private TextBox departmentTextBox = new TextBox(By.id("department"), "Department input field");
-
     private Button submitBtn = new Button(By.id("submit"), "Submit button");
-
     private String userDataDynamicLocator = "//div[contains(text(),'%s')]";
     private String userDeleteButtonDynamicLocator = userDataDynamicLocator
             + "//parent::div//span[contains(@id, 'delete-record')]";

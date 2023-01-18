@@ -14,6 +14,7 @@ public class ParentFrameForm extends BaseFrame {
 
     private static By parentFrameLocator = By.id("frame1");
     private static Label parentFrameLabel = new Label(By.xpath("//body[contains(text(), 'Parent frame')]"), "parentFrameLabel");
+    private static Label childIframeLabel = new Label(By.xpath("//p[contains(text(), 'Child Iframe')]"), "Child Iframe");
 
     public ParentFrameForm() {
         super(parentFrameLabel, parentFrameLocator, "Parent Frame Page");
@@ -21,12 +22,14 @@ public class ParentFrameForm extends BaseFrame {
 
     public String getParentFrameLabelText() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : getParentFrameLabelText()");
-        return this.getElement().getText();
+//        return this.getElement().getText();
+        return parentFrameLabel.getText();
     }
 
     public String getChildIframeLabelText() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : getChildIframeLabelText()");
-        return childIframePage.getElement().getText();
+//        return childIframePage.getElement().getText();
+        return childIframeLabel.getText();
     }
 
     public void switchToChildFrame() throws IOException, ParseException {

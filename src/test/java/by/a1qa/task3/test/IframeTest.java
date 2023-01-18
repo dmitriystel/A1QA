@@ -16,16 +16,15 @@ public class IframeTest extends BaseTest {
     public void testIframe() throws IOException, ParseException {
         CustomLogger.info("Alerts test starts.");
         MainPage mainPage = new MainPage();
-//        mainPage.navigateToMainPage();
         BrowserUtil.goToURL(ConfigManager.getURL());
         CustomLogger.info("Step 1. Assert if the main page is open.");
 
         Assert.assertTrue(mainPage.isPageOpened(), "Main page isn't open.");
 
-        mainPage.scrollDown();
+//        mainPage.scrollDown();
         mainPage.clickAlertsFrameWindowsBtn();
         AlertsFrameWindowsForm alertsFrameWindowsForm = new AlertsFrameWindowsForm();
-        alertsFrameWindowsForm.scrollDown();
+//        alertsFrameWindowsForm.scrollDown();
         alertsFrameWindowsForm.nestedFramesButtonClick();
         NestedFramesForm nestedFramesForm = new NestedFramesForm();
         CustomLogger.info("Step 2. Assert if page with Nested Frames form is open.");
@@ -45,7 +44,7 @@ public class IframeTest extends BaseTest {
                 "There is no messages 'Child Iframe' present on the page");
 
         parentFramePage.leaveChildFrame();
-        nestedFramesForm.scrollDown();
+//        nestedFramesForm.scrollDown();
         nestedFramesForm.clickFramesBtn();
         FramesForm framesForm = new FramesForm();
         CustomLogger.info("Step 3.1. Assert if frames form is open");

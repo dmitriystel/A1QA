@@ -19,6 +19,8 @@ public class LowerFrameForm extends BaseFrame {
 
     public String getLowerFrameLabelText() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : getLowerFrameLabelText()");
-        return this.getElement().getText();
+//        return this.getElement().getText();
+        return lowerFrameLabel.getText();
+
     }
 }

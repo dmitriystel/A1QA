@@ -1,7 +1,6 @@
 package by.a1qa.task3.test;
 
 import by.a1qa.task3.driver.DriverSingleton;
-import by.a1qa.task3.util.BrowserUtil;
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;

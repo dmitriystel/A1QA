@@ -13,11 +13,8 @@ public class BrowserWindowsForm extends BaseForm {
 
     private static Label browserWindowsFormLabel
             = new Label(By.xpath("//div[contains(text(),'Browser')]/parent::div"), "Browser Windows Form label");
-
     private Button newTabBtn = new Button(By.id("tabButton"), "New Tab button");
-
     private Button elementsBtn = new Button(By.xpath("//div[contains(text(), 'Elements')]"), "elements head button");
-
     private Button linksBtn = new Button(By.xpath("//span[text()='Links']//parent::li"), "Links button");
 
     public BrowserWindowsForm() {

@@ -17,15 +17,12 @@ public class AlertsTest extends BaseTest{
         CustomLogger.info("Alerts test starts.");
         MainPage mainPage = new MainPage();
         BrowserUtil.goToURL(ConfigManager.getURL());
-
         CustomLogger.info("Step 1. Assert if the main page is open.");
 
         Assert.assertTrue(mainPage.isPageOpened(), "Main page isn't open.");
 
-        mainPage.scrollDown();
         mainPage.clickAlertsFrameWindowsBtn();
         AlertsFrameWindowsForm alertsFrameWindowsForm = new AlertsFrameWindowsForm();
-        alertsFrameWindowsForm.scrollDown();
         alertsFrameWindowsForm.openAlertsForm();
         CustomLogger.info("Step 2. Assert if the alerts form has appeared.");
         AlertsForm alertsForm = new AlertsForm();
@@ -35,28 +32,26 @@ public class AlertsTest extends BaseTest{
         alertsForm.openAlertYouClickedBtn();
         CustomLogger.info("Step 3. Assert if alert with text 'You clicked a button' is open.");
 
-        Assert.assertEquals(alertsForm.getAlertText(), "You clicked a button",
+        Assert.assertEquals(AlertUtil.getText(), "You clicked a button",
                 "Alert with text 'You clicked a button' isn't open.");
 
-//        alertsForm.closeAlert();
         AlertUtil.acceptAlert();
 
         CustomLogger.info("Step 4. Assert if alert is closed.");
 
-        Assert.assertFalse(alertsForm.isAlertPresent(), "Alert isn't closed");
+        Assert.assertFalse(AlertUtil.isDialogPresent(), "Alert isn't closed");
 
         alertsForm.openAlertDoYouConfirmActionBtn();
         CustomLogger.info("Step 5. Assert if alert with text 'Do you confirm actions?' is open.");
 
-        Assert.assertEquals(alertsForm.getAlertText(), "Do you confirm action?",
+        Assert.assertEquals(AlertUtil.getText(), "Do you confirm action?",
                 "Alert with text 'Do you confirm action?' isn't open.");
 
-//        alertsForm.closeAlert();
         AlertUtil.acceptAlert();
 
         CustomLogger.info("Step 6.1 Assert if alert is closed.");
 
-        Assert.assertFalse(alertsForm.isAlertPresent(), "Alert isn't closed");
+        Assert.assertFalse(AlertUtil.isDialogPresent(), "Alert isn't closed");
 
         CustomLogger.info("Step 6.2 Assert if 'You selected Ok' appeared on the page.");
 
@@ -66,19 +61,18 @@ public class AlertsTest extends BaseTest{
         alertsForm.openAlertPleaseEnterYourNameBtn();
         CustomLogger.info("Step 7. Assert if alert with 'Please enter your name' has appeared on the page.");
 
-        Assert.assertEquals(alertsForm.getAlertText(), "Please enter your name",
+        Assert.assertEquals(AlertUtil.getText(), "Please enter your name",
                 "Alert with text 'Please enter your name' did not appear.");
+
         String randomString = RandomStringGenerator.getRandomString();
-        alertsForm
-                .alertSendText(randomString);
-//                .closeAlert();
+
+        AlertUtil.sendKeys(randomString);
 
         AlertUtil.acceptAlert();
 
-
         CustomLogger.info("Step 8. Assert if alert is closed.");
 
-        Assert.assertFalse(alertsForm.isAlertPresent(), "Alert is not closed");
+        Assert.assertFalse(AlertUtil.isDialogPresent(), "Alert is not closed");
 
         CustomLogger.info("Step 9. Assert if the appeared text equals to the one you entered before.");
 

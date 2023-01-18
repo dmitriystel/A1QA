@@ -10,10 +10,8 @@ import org.openqa.selenium.By;
 import java.io.IOException;
 
 public class ElementsForm extends BaseForm {
-
     private static Label elementsLabel
-            = new Label(By.xpath("//div[@class = 'main-header' and contains(text(), 'Elements')]"), "elementsLabel");
-
+        = new Label(By.xpath("//div[contains(@class, 'main-header') and contains(text(), 'Elements')]"), "elementsLabel");
     private Button webTablesBtn = new Button(By.xpath("//span[contains(text(), 'Web')]//parent::li"), "Web Tables button");
 
     public ElementsForm() {
