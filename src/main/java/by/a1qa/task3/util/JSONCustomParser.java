@@ -4,6 +4,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,28 +15,28 @@ public class JSONCustomParser {
 
     private static JSONParser parser = new JSONParser();
 
-    public static List<String> parseArrayToListByName(String path, String elementName){
+    public static List<String> parseArrayToListByName(String path, String elementName) throws IOException, ParseException {
         List<String> values = new ArrayList<>();
-        try {
+//        try {
             JSONObject jsonObject = (JSONObject) parser.parse(new FileReader(path));
             JSONArray elements = (JSONArray)jsonObject.get(elementName);
             for(Object obj : elements){
                 values.add(obj.toString());
             }
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
-        }
+//        } catch (IOException | ParseException e) {
+//            e.printStackTrace();
+//        }
         return values;
     }
 
-    public static String parseElementByName(String path, String elementName){
+    public static String parseElementByName(String path, String elementName) throws IOException, ParseException {
         String value = null;
-        try {
+//        try {
             JSONObject jsonObject = (JSONObject) parser.parse(new FileReader(path));
             value = (String) jsonObject.get(elementName);
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
-        }
+//        } catch (IOException | ParseException e) {
+//            e.printStackTrace();
+//        }
         return value;
     }
 }

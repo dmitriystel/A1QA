@@ -1,7 +1,10 @@
 package by.a1qa.task3.base;
 
 import by.a1qa.task3.util.FrameUtil;
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
+
+import java.io.IOException;
 
 public abstract class BaseFrame extends BaseForm{
 
@@ -12,11 +15,11 @@ public abstract class BaseFrame extends BaseForm{
         this.frameLocator = frameLocator;
     }
 
-    public void switchToThisFrame(){
+    public void switchToThisFrame() throws IOException, ParseException {
         FrameUtil.switchToFrame(frameLocator);
     }
 
-    public void leaveFrame(){
+    public void leaveFrame() throws IOException, ParseException {
         FrameUtil.leaveFrame();
     }
 }

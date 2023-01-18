@@ -5,80 +5,74 @@ import by.a1qa.task3.element.Button;
 import by.a1qa.task3.element.Label;
 import by.a1qa.task3.util.AlertUtil;
 import by.a1qa.task3.util.CustomLogger;
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
+
+import java.io.IOException;
 
 public class AlertsForm extends BaseForm {
 
-    private static By alertsLocator = By.xpath("//div[@class='main-header' and contains(text(), 'Alerts')]");
-    private static Label alertsLabel = new Label(alertsLocator, "alertsFrameAndWindowLabel");
+    private static Label alertsLabel
+        = new Label(By.xpath("//div[@class='main-header' and contains(text(), 'Alerts')]"), "alertsFrameAndWindowLabel");
 
-    private By toSeeAlertBtnLocator = By.id("alertButton");
-    private Button toSeeAlertBtn = new Button(toSeeAlertBtnLocator, "to see alert button");
+    private Button toSeeAlertBtn = new Button(By.id("alertButton"), "to see alert button");
 
-    private By confirmBoxBtnLocator = By.id("confirmButton");
-    private Button confirmBoxBtn = new Button(confirmBoxBtnLocator, "confirm box will appear button");
+    private Button confirmBoxBtn = new Button(By.id("confirmButton"), "confirm box will appear button");
 
-    private By confirmBoxResultLabelLocator = By.id("confirmResult");
-    private Label confirmBoxResultLabel
-            = new Label(confirmBoxResultLabelLocator, "Confirm box result after alert");
+    private Label confirmBoxResultLabel = new Label(By.id("confirmResult"), "Confirm box result after alert");
 
-    private By promptBoxBtnLocator = By.id("promtButton");
-    private Button promptBoxBtn = new Button(promptBoxBtnLocator, "prompt box will appear button");
+    private Button promptBoxBtn = new Button(By.id("promtButton"), "prompt box will appear button");
 
-    private By promptBoxResultLabelLocator = By.id("promptResult");
-    private Label promptBoxResultLabel
-            = new Label(promptBoxResultLabelLocator, "Prompt box result after alert");
+    private Label promptBoxResultLabel = new Label(By.id("promptResult"), "Prompt box result after alert");
 
     public AlertsForm() {
         super(alertsLabel, "alertsForm");
     }
 
-    public AlertsForm openAlertYouClickedBtn(){
+    public void openAlertYouClickedBtn() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : openAlertYouClickedBtn()");
         toSeeAlertBtn.click();
-        return this;
     }
 
-    public String getAlertText() {
+    public String getAlertText() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : getAlertText()");
         return AlertUtil.getText();
     }
 
-    public AlertsForm closeAlert(){
-        CustomLogger.info(this.getFormName() + " : closeAlert()");
-        AlertUtil.acceptAlert();
-        return this;
-    }
+//    public AlertsForm closeAlert() throws IOException, ParseException {
+//        CustomLogger.info(this.getFormName() + " : closeAlert()");
+//        AlertUtil.acceptAlert();
+//        return this;
+//    }
 
-    public boolean isAlertPresent(){
+    public boolean isAlertPresent() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : isAlertPresent()");
         return AlertUtil.isDialogPresent();
     }
 
-    public AlertsForm openAlertDoYouConfirmActionBtn(){
+    public AlertsForm openAlertDoYouConfirmActionBtn() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : openAlertDoYouConfirmActionBtn()");
         confirmBoxBtn.click();
         return this;
     }
 
-    public String getConfirmBoxResultLabelText(){
+    public String getConfirmBoxResultLabelText() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : getConfirmBoxResultLabelText()");
         return confirmBoxResultLabel.getText();
     }
 
-    public AlertsForm openAlertPleaseEnterYourNameBtn(){
+    public void openAlertPleaseEnterYourNameBtn() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : openAlertPleaseEnterYourNameBtn()" );
         promptBoxBtn.click();
-        return this;
     }
 
-    public AlertsForm alertSendText(String text) {
+    public AlertsForm alertSendText(String text) throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : alertSendText(String text)" );
         AlertUtil.sendKeys(text);
         return this;
     }
 
-    public String getPromptBoxResultLabelText() {
+    public String getPromptBoxResultLabelText() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : getPromptBoxResultLabelText()" );
         return promptBoxResultLabel.getText();
     }

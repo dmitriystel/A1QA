@@ -4,39 +4,38 @@ import by.a1qa.task3.base.BaseForm;
 import by.a1qa.task3.element.Button;
 import by.a1qa.task3.element.Label;
 import by.a1qa.task3.util.CustomLogger;
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
+
+import java.io.IOException;
 
 public class BrowserWindowsForm extends BaseForm {
 
-    private static By browserWindowsFormLabelLocator = By.xpath("//div[contains(text(),'Browser')]/parent::div");
     private static Label browserWindowsFormLabel
-            = new Label(browserWindowsFormLabelLocator, "Browser Windows Form label");
+            = new Label(By.xpath("//div[contains(text(),'Browser')]/parent::div"), "Browser Windows Form label");
 
-    private By newTabBtnLocator = By.id("tabButton");
-    private Button newTabBtn = new Button(newTabBtnLocator, "New Tab button");
+    private Button newTabBtn = new Button(By.id("tabButton"), "New Tab button");
 
-    private By elementsBtnLocator = By.xpath("//div[contains(text(), 'Elements')]");
-    private Button elementsBtn = new Button(elementsBtnLocator, "elements head button");
+    private Button elementsBtn = new Button(By.xpath("//div[contains(text(), 'Elements')]"), "elements head button");
 
-    private By linksBtnLocator = By.xpath("//span[text()='Links']//parent::li");
-    private Button linksBtn = new Button(linksBtnLocator, "Links button");
+    private Button linksBtn = new Button(By.xpath("//span[text()='Links']//parent::li"), "Links button");
 
     public BrowserWindowsForm() {
         super(browserWindowsFormLabel, "Browser Windows");
     }
 
-    public void newTabBtnClick(){
+    public void newTabBtnClick() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : newTabBtnClick()");
         newTabBtn.click();
     }
 
-    public BrowserWindowsForm elementsButtonClick(){
+    public BrowserWindowsForm elementsButtonClick() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : elementsButtonClick()");
         elementsBtn.click();
         return this;
     }
 
-    public BrowserWindowsForm linksButtonClick(){
+    public BrowserWindowsForm linksButtonClick() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : linksButtonClick()");
         linksBtn.click();
         return this;

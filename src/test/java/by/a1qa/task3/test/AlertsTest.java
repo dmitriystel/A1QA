@@ -3,18 +3,21 @@ package by.a1qa.task3.test;
 import by.a1qa.task3.page.AlertsForm;
 import by.a1qa.task3.page.AlertsFrameWindowsForm;
 import by.a1qa.task3.page.MainPage;
-import by.a1qa.task3.util.CustomLogger;
-import by.a1qa.task3.util.RandomStringGenerator;
+import by.a1qa.task3.util.*;
+import org.json.simple.parser.ParseException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
 
 public class AlertsTest extends BaseTest{
 
     @Test
-    public void testAlerts(){
+    public void testAlerts() throws IOException, ParseException {
         CustomLogger.info("Alerts test starts.");
         MainPage mainPage = new MainPage();
-        mainPage.navigateToMainPage();
+        BrowserUtil.goToURL(ConfigManager.getURL());
+//        mainPage.navigateToMainPage();
         CustomLogger.info("Step 1. Assert if the main page is open.");
 
         Assert.assertTrue(mainPage.isPageOpened(), "Main page isn't open.");
@@ -35,7 +38,9 @@ public class AlertsTest extends BaseTest{
         Assert.assertEquals(alertsForm.getAlertText(), "You clicked a button",
                 "Alert with text 'You clicked a button' isn't open.");
 
-        alertsForm.closeAlert();
+//        alertsForm.closeAlert();
+        AlertUtil.acceptAlert();
+
         CustomLogger.info("Step 4. Assert if alert is closed.");
 
         Assert.assertFalse(alertsForm.isAlertPresent(), "Alert isn't closed");
@@ -46,7 +51,9 @@ public class AlertsTest extends BaseTest{
         Assert.assertEquals(alertsForm.getAlertText(), "Do you confirm action?",
                 "Alert with text 'Do you confirm action?' isn't open.");
 
-        alertsForm.closeAlert();
+//        alertsForm.closeAlert();
+        AlertUtil.acceptAlert();
+
         CustomLogger.info("Step 6.1 Assert if alert is closed.");
 
         Assert.assertFalse(alertsForm.isAlertPresent(), "Alert isn't closed");
@@ -63,8 +70,12 @@ public class AlertsTest extends BaseTest{
                 "Alert with text 'Please enter your name' did not appear.");
         String randomString = RandomStringGenerator.getRandomString();
         alertsForm
-                .alertSendText(randomString)
-                .closeAlert();
+                .alertSendText(randomString);
+//                .closeAlert();
+
+        AlertUtil.acceptAlert();
+
+
         CustomLogger.info("Step 8. Assert if alert is closed.");
 
         Assert.assertFalse(alertsForm.isAlertPresent(), "Alert is not closed");

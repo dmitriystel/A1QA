@@ -1,17 +1,23 @@
 package by.a1qa.task3.test;
 
 import by.a1qa.task3.page.*;
+import by.a1qa.task3.util.BrowserUtil;
+import by.a1qa.task3.util.ConfigManager;
 import by.a1qa.task3.util.CustomLogger;
+import org.json.simple.parser.ParseException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
 
 public class IframeTest extends BaseTest {
 
     @Test
-    public void testIframe(){
+    public void testIframe() throws IOException, ParseException {
         CustomLogger.info("Alerts test starts.");
         MainPage mainPage = new MainPage();
-        mainPage.navigateToMainPage();
+//        mainPage.navigateToMainPage();
+        BrowserUtil.goToURL(ConfigManager.getURL());
         CustomLogger.info("Step 1. Assert if the main page is open.");
 
         Assert.assertTrue(mainPage.isPageOpened(), "Main page isn't open.");

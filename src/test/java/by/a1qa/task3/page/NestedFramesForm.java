@@ -4,21 +4,22 @@ import by.a1qa.task3.base.BaseForm;
 import by.a1qa.task3.element.Button;
 import by.a1qa.task3.element.Label;
 import by.a1qa.task3.util.CustomLogger;
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
+
+import java.io.IOException;
 
 public class NestedFramesForm extends BaseForm {
 
-    private static By nestedFramesLabelLocator = By.xpath("//div[contains(text(), 'Nested Frame')]");
-    private static Label nestedFramesLabel = new Label(nestedFramesLabelLocator, "nestedFramesLabel");
+    private static Label nestedFramesLabel = new Label(By.xpath("//div[contains(text(), 'Nested Frame')]"), "nestedFramesLabel");
 
-    private By framesBtnLocator =  By.xpath("//span[text()='Frames']//parent::li");
-    private Button framesBtn = new Button(framesBtnLocator, "Frames Button");
+    private Button framesBtn = new Button(By.xpath("//span[text()='Frames']//parent::li"), "Frames Button");
 
     public NestedFramesForm() {
         super(nestedFramesLabel, "nestedFramesLabel");
     }
 
-    public NestedFramesForm clickFramesBtn() {
+    public NestedFramesForm clickFramesBtn() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : clickFramesBtn()");
         framesBtn.click();
         return this;

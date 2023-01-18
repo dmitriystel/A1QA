@@ -4,41 +4,40 @@ import by.a1qa.task3.base.BaseForm;
 import by.a1qa.task3.element.Button;
 import by.a1qa.task3.element.Label;
 import by.a1qa.task3.util.CustomLogger;
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
+
+import java.io.IOException;
 
 public class AlertsFrameWindowsForm extends BaseForm {
 
-    private static By alertsFrameAndWindowLabelLocator
-            = By.xpath("//div[@class='main-header' and contains(text(), 'Alerts, Frame & Windows')]");
     private static Label alertsFrameAndWindowLabel
-            = new Label(alertsFrameAndWindowLabelLocator, "alertsFrameAndWindowLabel");
+            = new Label(By.xpath("//div[@class='main-header' and contains(text(), 'Alerts, Frame & Windows')]"),
+        "alertsFrameAndWindowLabel");
 
-    private By alertsBtnLocator = By.xpath("//span[contains(text(), 'Alerts')]//parent::li");
-    private Button alertsBtn = new Button(alertsBtnLocator, "Alerts Button");
+    private Button alertsBtn = new Button(By.xpath("//span[contains(text(), 'Alerts')]//parent::li"), "Alerts Button");
 
-    private By nestedFramesButtonLocator = By.xpath("//span[contains(text(), 'Nested')]//parent::li");
-    private Button nestedFramesBtn = new Button(nestedFramesButtonLocator, "Nested Frames Button");
+    private Button nestedFramesBtn = new Button(By.xpath("//span[contains(text(), 'Nested')]//parent::li"), "Nested Frames Button");
 
-    private By browserWindowsButtonLocator = By.xpath("//span[contains(text(), 'Browser')]//parent::li");
-    private Button browserWindowsBtn = new Button(browserWindowsButtonLocator, "Browser Windows button");
+    private Button browserWindowsBtn = new Button(By.xpath("//span[contains(text(), 'Browser')]//parent::li"), "Browser Windows button");
 
     public AlertsFrameWindowsForm() {
         super(alertsFrameAndWindowLabel, "alertsFrameAndWindowsPage");
     }
 
-    public AlertsFrameWindowsForm openAlertsForm(){
+    public AlertsFrameWindowsForm openAlertsForm() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : openAlertsForm()");
         alertsBtn.click();
         return this;
     }
 
-    public AlertsFrameWindowsForm nestedFramesButtonClick() {
+    public AlertsFrameWindowsForm nestedFramesButtonClick() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : nestedFramesButtonClick()");
         nestedFramesBtn.click();
         return this;
     }
 
-    public AlertsFrameWindowsForm browserWindowsButtonClick() {
+    public AlertsFrameWindowsForm browserWindowsButtonClick() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : browserWindowsButtonClick()");
         browserWindowsBtn.click();
         return this;
