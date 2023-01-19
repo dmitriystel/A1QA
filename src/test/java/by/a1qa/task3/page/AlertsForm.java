@@ -26,7 +26,6 @@ public class AlertsForm extends BaseForm {
         toSeeAlertBtn.click();
     }
 
-
     public AlertsForm openAlertDoYouConfirmActionBtn() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : openAlertDoYouConfirmActionBtn()");
         confirmBoxBtn.click();

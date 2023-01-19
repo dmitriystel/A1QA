@@ -10,14 +10,8 @@ import java.io.IOException;
 
 public class JSUtil {
 
-    private static JavascriptExecutor js;
-
     public static void pageScrollDown(By locator) throws IOException, ParseException {
-//        js = (JavascriptExecutor) DriverSingleton.getDriver();
-//        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-
         WebElement element = DriverSingleton.getDriver().findElement(locator);
         ((JavascriptExecutor) DriverSingleton.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
-
     }
 }

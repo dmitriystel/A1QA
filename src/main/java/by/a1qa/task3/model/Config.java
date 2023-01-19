@@ -5,6 +5,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Setter
 @EqualsAndHashCode
 @ToString
 public class Config {
@@ -12,5 +13,4 @@ public class Config {
     private String url;
     private String waitDuration;
     private String options;
-
 }

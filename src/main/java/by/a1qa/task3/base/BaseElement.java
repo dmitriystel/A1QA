@@ -6,7 +6,6 @@ import by.a1qa.task3.util.JSUtil;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import java.io.IOException;
 
 public abstract class BaseElement {

@@ -7,7 +7,6 @@ import by.a1qa.task3.util.*;
 import org.json.simple.parser.ParseException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 
 public class AlertsTest extends BaseTest{
@@ -36,7 +35,6 @@ public class AlertsTest extends BaseTest{
                 "Alert with text 'You clicked a button' isn't open.");
 
         AlertUtil.acceptAlert();
-
         CustomLogger.info("Step 4. Assert if alert is closed.");
 
         Assert.assertFalse(AlertUtil.isDialogPresent(), "Alert isn't closed");
@@ -65,11 +63,8 @@ public class AlertsTest extends BaseTest{
                 "Alert with text 'Please enter your name' did not appear.");
 
         String randomString = RandomStringGenerator.getRandomString();
-
         AlertUtil.sendKeys(randomString);
-
         AlertUtil.acceptAlert();
-
         CustomLogger.info("Step 8. Assert if alert is closed.");
 
         Assert.assertFalse(AlertUtil.isDialogPresent(), "Alert is not closed");

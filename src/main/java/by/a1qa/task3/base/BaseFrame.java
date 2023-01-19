@@ -3,7 +3,6 @@ package by.a1qa.task3.base;
 import by.a1qa.task3.util.FrameUtil;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
-
 import java.io.IOException;
 
 public abstract class BaseFrame extends BaseForm{

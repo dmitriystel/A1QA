@@ -7,7 +7,6 @@ import by.a1qa.task3.util.CustomLogger;
 import org.json.simple.parser.ParseException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 
 public class HandlesTest extends BaseTest{
@@ -49,7 +48,6 @@ public class HandlesTest extends BaseTest{
         Assert.assertTrue(browserWindowsForm.isPageOpened(),
                 "Page with Browser Windows form is not open!");
 
-//        browserWindowsForm.scrollDown();
         browserWindowsForm
                 .elementsButtonClick()
                 .linksButtonClick();

@@ -8,12 +8,12 @@ public abstract class BaseForm {
     private BaseElement element;
     private String formName;
 
+    public BaseForm() {}
+
     public BaseForm(BaseElement element, String formName){
         this.element = element;
         this.formName = formName;
     }
-
-    public BaseForm() {}
 
     public String getFormName() { return formName; }
 

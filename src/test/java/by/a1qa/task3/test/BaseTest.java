@@ -4,7 +4,6 @@ import by.a1qa.task3.driver.DriverSingleton;
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-
 import java.io.IOException;
 
 public abstract class BaseTest {

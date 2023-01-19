@@ -9,9 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-
 import java.io.IOException;
-import java.util.List;
 
 public class DriverSingleton {
 
@@ -22,7 +20,7 @@ public class DriverSingleton {
     public static WebDriver getDriver() throws IOException, ParseException {
         if(driver == null){
             String browserName = ConfigManager.getBrowserName();
-            List<String> options = ConfigManager.getOptions();
+            String options = ConfigManager.getOptions();
             switch (browserName) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
@@ -42,7 +40,6 @@ public class DriverSingleton {
         }
         return driver;
     }
-
 
     public static void closeBrowser() throws IOException, ParseException {
         CustomLogger.info("BrowserUtil.closeBrowser()");

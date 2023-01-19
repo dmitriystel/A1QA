@@ -2,7 +2,6 @@ package by.a1qa.task3.util;
 
 import by.a1qa.task3.driver.DriverSingleton;
 import org.json.simple.parser.ParseException;
-
 import java.io.IOException;
 
 public class BrowserUtil {

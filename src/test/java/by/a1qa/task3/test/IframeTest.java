@@ -7,7 +7,6 @@ import by.a1qa.task3.util.CustomLogger;
 import org.json.simple.parser.ParseException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 
 public class IframeTest extends BaseTest {
@@ -21,10 +20,8 @@ public class IframeTest extends BaseTest {
 
         Assert.assertTrue(mainPage.isPageOpened(), "Main page isn't open.");
 
-//        mainPage.scrollDown();
         mainPage.clickAlertsFrameWindowsBtn();
         AlertsFrameWindowsForm alertsFrameWindowsForm = new AlertsFrameWindowsForm();
-//        alertsFrameWindowsForm.scrollDown();
         alertsFrameWindowsForm.nestedFramesButtonClick();
         NestedFramesForm nestedFramesForm = new NestedFramesForm();
         CustomLogger.info("Step 2. Assert if page with Nested Frames form is open.");
@@ -44,7 +41,6 @@ public class IframeTest extends BaseTest {
                 "There is no messages 'Child Iframe' present on the page");
 
         parentFramePage.leaveChildFrame();
-//        nestedFramesForm.scrollDown();
         nestedFramesForm.clickFramesBtn();
         FramesForm framesForm = new FramesForm();
         CustomLogger.info("Step 3.1. Assert if frames form is open");

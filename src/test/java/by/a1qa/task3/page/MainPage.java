@@ -3,22 +3,17 @@ package by.a1qa.task3.page;
 import by.a1qa.task3.base.BaseForm;
 import by.a1qa.task3.element.Button;
 import by.a1qa.task3.element.Label;
-import by.a1qa.task3.util.BrowserUtil;
-import by.a1qa.task3.util.ConfigManager;
 import by.a1qa.task3.util.CustomLogger;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
-
 import java.io.IOException;
 
 public class MainPage extends BaseForm {
 
     private static Label seleniumCertificationTrainingLabel
             = new Label(By.xpath("//img[contains(@class, 'banner')]"), "seleniumCertificationTrainingLabel");
-
     private Button alertsFrameAndWindowsBtn
             = new Button(By.xpath("//h5[contains(text(), 'Alerts')]//parent::div"), "Alerts, Frame & Windows button");
-
     private Button elementsButton = new Button(By.xpath("//h5[contains(text(), 'Elements')]//parent::div"), "Elements button");
 
     public MainPage() {

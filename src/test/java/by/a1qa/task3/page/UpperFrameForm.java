@@ -5,7 +5,6 @@ import by.a1qa.task3.element.Label;
 import by.a1qa.task3.util.CustomLogger;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
-
 import java.io.IOException;
 
 public class UpperFrameForm extends BaseFrame {
@@ -19,7 +18,6 @@ public class UpperFrameForm extends BaseFrame {
 
     public String getUpperFrameLabelText() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : getUpperFrameLabelText()");
-//        return this.getElement().getText();
         return upperFrameLabel.getText();
     }
 }

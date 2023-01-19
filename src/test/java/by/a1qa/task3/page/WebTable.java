@@ -10,10 +10,9 @@ import by.a1qa.task3.util.ConditionalWait;
 import by.a1qa.task3.util.CustomLogger;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
-
 import java.io.IOException;
 
-public class WebTables extends BaseForm {
+public class WebTable extends BaseForm {
 
     private static Label webTablesLabel
             = new Label(By.xpath("//div[contains(@class, 'main-header') and contains(text(), 'Web Tables')]"), "webTablesLabel");
@@ -30,11 +29,11 @@ public class WebTables extends BaseForm {
     private String userDeleteButtonDynamicLocator = userDataDynamicLocator
             + "//parent::div//span[contains(@id, 'delete-record')]";
 
-    public WebTables() {
+    public WebTable() {
         super(webTablesLabel, "webTablesLabel");
     }
 
-    public WebTables clickAddNewRecordBtn() throws IOException, ParseException {
+    public WebTable clickAddNewRecordBtn() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : clickAddNewRecordBtn()");
         addNewRecordBtn.click();
         return this;
@@ -45,18 +44,27 @@ public class WebTables extends BaseForm {
         return  registrationFormLabel.isDisplayed();
     }
 
-    public WebTables fillInRegistrationForm(User user) throws IOException, ParseException {
-        CustomLogger.info(this.getFormName() + " : fillInRegistrationForm(User user)");
+    public void inputFirstName(User user) throws IOException, ParseException {
         firstNameTextBox.sendText(user.getFirstName());
+    }
+    public void inputLastName(User user) throws IOException, ParseException {
         lastNameTextBox.sendText(user.getLastName());
+    }
+    public void inputUserEmail(User user) throws IOException, ParseException {
         userEmailTextBox.sendText(user.getEmail());
+    }
+    public void inputAge(User user) throws IOException, ParseException {
         ageTextBox.sendText(user.getAge());
+    }
+    public void inputSalary(User user) throws IOException, ParseException {
         salaryTextBox.sendText(user.getSalary());
-        departmentTextBox.sendText(user.getDepartment());
-        return this;
     }
 
-    public WebTables clickSubmitBtn() throws IOException, ParseException {
+    public void inputDepartment(User user) throws IOException, ParseException {
+        departmentTextBox.sendText(user.getDepartment());
+    }
+
+    public WebTable clickSubmitBtn() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : clickSubmitBtn()");
         submitBtn.click();
         ConditionalWait.waitElementDisappears(registrationFormLabel);

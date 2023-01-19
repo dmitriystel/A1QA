@@ -18,7 +18,6 @@ public class SampleForm  extends BaseForm {
 
     public String getPageLabelText() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : getPageLabelText()");
-//        return this.getElement().getText();
         return samplePageLabel.getText();
     }
 }

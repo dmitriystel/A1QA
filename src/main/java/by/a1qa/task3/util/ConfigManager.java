@@ -1,27 +1,33 @@
 package by.a1qa.task3.util;
 
+import by.a1qa.task3.model.Config;
 import org.json.simple.parser.ParseException;
-
 import java.io.IOException;
-import java.util.List;
 
 public class ConfigManager {
-
     private static final String CONFIG_FILE_PATH = "src/test/resources/testConfig/config.json";
+    private static Config config;
+
+    public static Config getConfig() throws IOException, ParseException {
+        if (config == null){
+            config = ConfigParser.parseConfigDataFromFileToConfigObject(new Config(), CONFIG_FILE_PATH);
+        }
+        return config;
+    }
 
     public static String getBrowserName() throws IOException, ParseException {
-        return JSONCustomParser.parseElementByName(CONFIG_FILE_PATH, "browserName");
+        return getConfig().getBrowserName();
     }
 
     public static String getURL() throws IOException, ParseException {
-        return JSONCustomParser.parseElementByName(CONFIG_FILE_PATH, "url");
+        return getConfig().getUrl();
     }
 
     public static int getWaitDurationInSeconds() throws IOException, ParseException {
-        return Integer.parseInt(JSONCustomParser.parseElementByName(CONFIG_FILE_PATH, "waitDuration"));
+        return Integer.parseInt(getConfig().getWaitDuration());
     }
 
-    public static List<String> getOptions() throws IOException, ParseException {
-        return JSONCustomParser.parseArrayToListByName(CONFIG_FILE_PATH, "options");
+    public static String getOptions() throws IOException, ParseException {
+        return getConfig().getOptions();
     }
 }

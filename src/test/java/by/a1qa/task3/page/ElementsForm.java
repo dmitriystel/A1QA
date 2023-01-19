@@ -6,7 +6,6 @@ import by.a1qa.task3.element.Label;
 import by.a1qa.task3.util.CustomLogger;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
-
 import java.io.IOException;
 
 public class ElementsForm extends BaseForm {
