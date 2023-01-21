@@ -25,14 +25,12 @@ public class AlertsFrameWindowsForm extends BaseForm {
         alertsBtn.click();
         return this;
     }
-
-    public AlertsFrameWindowsForm nestedFramesButtonClick() throws IOException, ParseException {
+    public AlertsFrameWindowsForm nestedFramesBtnClick() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : nestedFramesButtonClick()");
         nestedFramesBtn.click();
         return this;
     }
-
-    public AlertsFrameWindowsForm browserWindowsButtonClick() throws IOException, ParseException {
+    public AlertsFrameWindowsForm browserWindowsBtnClick() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : browserWindowsButtonClick()");
         browserWindowsBtn.click();
         return this;

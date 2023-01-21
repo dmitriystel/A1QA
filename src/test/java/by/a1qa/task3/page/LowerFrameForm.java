@@ -8,14 +8,12 @@ import org.openqa.selenium.By;
 import java.io.IOException;
 
 public class LowerFrameForm extends BaseFrame {
-
     private static By lowerFrameLocator = By.id("frame2");
     private static Label lowerFrameLabel = new Label(By.id("sampleHeading"), "Lower frame label");
 
     public LowerFrameForm() {
         super(lowerFrameLabel, lowerFrameLocator, "Lower Frame Page");
     }
-
     public String getLowerFrameLabelText() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : getLowerFrameLabelText()");
         return lowerFrameLabel.getText();

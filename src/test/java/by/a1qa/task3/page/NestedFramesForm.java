@@ -9,14 +9,12 @@ import org.openqa.selenium.By;
 import java.io.IOException;
 
 public class NestedFramesForm extends BaseForm {
-
     private static Label nestedFramesLabel = new Label(By.xpath("//div[contains(text(), 'Nested Frame')]"), "nestedFramesLabel");
     private Button framesBtn = new Button(By.xpath("//span[text()='Frames']//parent::li"), "Frames Button");
 
     public NestedFramesForm() {
         super(nestedFramesLabel, "nestedFramesLabel");
     }
-
     public NestedFramesForm clickFramesBtn() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : clickFramesBtn()");
         framesBtn.click();

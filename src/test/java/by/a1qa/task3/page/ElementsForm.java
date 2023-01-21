@@ -16,7 +16,6 @@ public class ElementsForm extends BaseForm {
     public ElementsForm() {
         super(elementsLabel, "Elements page");
     }
-
     public ElementsForm clickWebTablesBtn() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : clickWebTablesBtn()");
         webTablesBtn.click();

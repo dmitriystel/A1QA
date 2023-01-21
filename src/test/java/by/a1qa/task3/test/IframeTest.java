@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class IframeTest extends BaseTest {
-
     @Test
     public void testIframe() throws IOException, ParseException {
         CustomLogger.info("Alerts test starts.");
@@ -22,7 +21,7 @@ public class IframeTest extends BaseTest {
 
         mainPage.clickAlertsFrameWindowsBtn();
         AlertsFrameWindowsForm alertsFrameWindowsForm = new AlertsFrameWindowsForm();
-        alertsFrameWindowsForm.nestedFramesButtonClick();
+        alertsFrameWindowsForm.nestedFramesBtnClick();
         NestedFramesForm nestedFramesForm = new NestedFramesForm();
         CustomLogger.info("Step 2. Assert if page with Nested Frames form is open.");
 

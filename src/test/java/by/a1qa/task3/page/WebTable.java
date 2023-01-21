@@ -13,7 +13,6 @@ import org.openqa.selenium.By;
 import java.io.IOException;
 
 public class WebTable extends BaseForm {
-
     private static Label webTablesLabel
             = new Label(By.xpath("//div[contains(@class, 'main-header') and contains(text(), 'Web Tables')]"), "webTablesLabel");
     private Button addNewRecordBtn = new Button(By.id("addNewRecordButton"), "add new record button");
@@ -32,18 +31,15 @@ public class WebTable extends BaseForm {
     public WebTable() {
         super(webTablesLabel, "webTablesLabel");
     }
-
     public WebTable clickAddNewRecordBtn() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : clickAddNewRecordBtn()");
         addNewRecordBtn.click();
         return this;
     }
-
-    public boolean isRegistrationFormLabelOpen() throws IOException, ParseException {
+    public boolean isRegFormLabelOpen() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : isRegistrationFormLabelOpen()");
         return  registrationFormLabel.isDisplayed();
     }
-
     public void inputFirstName(User user) throws IOException, ParseException {
         firstNameTextBox.sendText(user.getFirstName());
     }
@@ -59,29 +55,24 @@ public class WebTable extends BaseForm {
     public void inputSalary(User user) throws IOException, ParseException {
         salaryTextBox.sendText(user.getSalary());
     }
-
     public void inputDepartment(User user) throws IOException, ParseException {
         departmentTextBox.sendText(user.getDepartment());
     }
-
     public WebTable clickSubmitBtn() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : clickSubmitBtn()");
         submitBtn.click();
         ConditionalWait.waitElementDisappears(registrationFormLabel);
         return this;
     }
-
     public boolean isUserDataLabelOpen(String userData) throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : isUserDataLabelOpen(String userData)");
         return new Label(By.xpath(String.format(userDataDynamicLocator, userData)),
                 "User data dynamic label : " + userData).isDisplayed();
     }
-
     public int getNumOfUserRecords() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : getNumOfUserRecords()");
         return DriverSingleton.getDriver().findElements(By.xpath(String.format(userDataDynamicLocator, "@"))).size();
     }
-
     public void clickUserDeleteBtn(String userData) throws IOException, ParseException {
         Button userDeleteBtn = new Button(By.xpath(String.format(userDeleteButtonDynamicLocator, userData)),
                 "specific user delete button : " + userData);

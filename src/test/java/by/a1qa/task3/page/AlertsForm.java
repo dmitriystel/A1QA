@@ -25,23 +25,19 @@ public class AlertsForm extends BaseForm {
         CustomLogger.info(this.getFormName() + " : openAlertYouClickedBtn()");
         toSeeAlertBtn.click();
     }
-
     public AlertsForm openAlertDoYouConfirmActionBtn() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : openAlertDoYouConfirmActionBtn()");
         confirmBoxBtn.click();
         return this;
     }
-
     public String getConfirmBoxResultLabelText() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : getConfirmBoxResultLabelText()");
         return confirmBoxResultLabel.getText();
     }
-
     public void openAlertPleaseEnterYourNameBtn() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : openAlertPleaseEnterYourNameBtn()" );
         promptBoxBtn.click();
     }
-
     public String getPromptBoxResultLabelText() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : getPromptBoxResultLabelText()" );
         return promptBoxResultLabel.getText();

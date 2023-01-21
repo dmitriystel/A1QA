@@ -14,19 +14,15 @@ public class ConfigManager {
         }
         return config;
     }
-
     public static String getBrowserName() throws IOException, ParseException {
         return getConfig().getBrowserName();
     }
-
     public static String getURL() throws IOException, ParseException {
         return getConfig().getUrl();
     }
-
     public static int getWaitDurationInSeconds() throws IOException, ParseException {
         return Integer.parseInt(getConfig().getWaitDuration());
     }
-
     public static String getOptions() throws IOException, ParseException {
         return getConfig().getOptions();
     }

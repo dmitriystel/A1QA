@@ -7,12 +7,10 @@ import org.testng.annotations.BeforeClass;
 import java.io.IOException;
 
 public abstract class BaseTest {
-
     @BeforeClass(alwaysRun = true)
     public void browserSetUp() throws IOException, ParseException {
         DriverSingleton.getDriver();
     }
-
     @AfterClass(alwaysRun = true)
     public void browserTearDown() throws IOException, ParseException {
         DriverSingleton.closeBrowser();

@@ -9,7 +9,6 @@ import org.openqa.selenium.By;
 import java.io.IOException;
 
 public class MainPage extends BaseForm {
-
     private static Label seleniumCertificationTrainingLabel
             = new Label(By.xpath("//img[contains(@class, 'banner')]"), "seleniumCertificationTrainingLabel");
     private Button alertsFrameAndWindowsBtn
@@ -19,13 +18,11 @@ public class MainPage extends BaseForm {
     public MainPage() {
         super(seleniumCertificationTrainingLabel, "mainPage");
     }
-
     public MainPage clickAlertsFrameWindowsBtn() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : clickAlertsFrameWindowsBtn()");
         alertsFrameAndWindowsBtn.click();
         return this;
     }
-
     public MainPage clickElementsBtn() throws IOException, ParseException {
         CustomLogger.info(this.getFormName() + " : clickElementsBtn()");
         elementsButton.click();

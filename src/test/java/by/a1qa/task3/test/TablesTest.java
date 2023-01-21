@@ -17,9 +17,8 @@ import java.io.IOException;
 import java.util.List;
 
 public class TablesTest extends BaseTest{
-
     @DataProvider(name = "userProvider")
-    public Object[][] dataProviderMethod() {
+    public Object[][] dataProviderMethod() throws IOException {
         List<User> users = UserParser.parseUserFromFileToList();
         Object [][] usersObj = new Object[users.size()][1];
         for (int i = 0; i < users.size(); i++) {
@@ -27,7 +26,6 @@ public class TablesTest extends BaseTest{
         }
         return usersObj;
     }
-
     @Test(dataProvider = "userProvider")
     public void testTables(Object usersObj) throws IOException, ParseException {
         CustomLogger.info("Tables test starts.");
@@ -48,7 +46,7 @@ public class TablesTest extends BaseTest{
         webTable.clickAddNewRecordBtn();
         CustomLogger.info("Step 3. Assert if the registration form has appeared on the page.");
 
-        Assert.assertTrue(webTable.isRegistrationFormLabelOpen(),
+        Assert.assertTrue(webTable.isRegFormLabelOpen(),
                 "The registration form has not appeared on the page!");
 
         WebTableStep webTableStep = new WebTableStep();
@@ -56,7 +54,7 @@ public class TablesTest extends BaseTest{
         webTable.clickSubmitBtn();
         CustomLogger.info("Step 4. Assert if the registration form has closed.");
 
-        Assert.assertFalse(webTable.isRegistrationFormLabelOpen(),
+        Assert.assertFalse(webTable.isRegFormLabelOpen(),
                 "The registration form has not closed!");
 
         CustomLogger.info("Step 5. Assert if data of user has appeared in a table.");

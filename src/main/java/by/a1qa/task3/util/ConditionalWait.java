@@ -9,11 +9,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.IOException;
 import java.time.Duration;
-
 import static by.a1qa.task3.util.ConfigManager.getWaitDurationInSeconds;
 
 public class ConditionalWait {
-
     private static int seconds;
 
     static {
@@ -25,18 +23,15 @@ public class ConditionalWait {
             e.printStackTrace();
         }
     }
-
     private static Duration duration = Duration.ofSeconds(seconds);
 
     public static void waitToBeClickableByLocator(By locator) throws IOException, ParseException {
         new WebDriverWait(DriverSingleton.getDriver(), duration).until(ExpectedConditions.elementToBeClickable(locator));
     }
-
     public static void waitElementDisappears(BaseElement element) throws IOException, ParseException {
         new WebDriverWait(DriverSingleton.getDriver(), duration)
                 .until(ExpectedConditions.invisibilityOfElementLocated(element.getLocator()));
     }
-
     public static Alert waitUntilAlertIsPresent() throws IOException, ParseException {
         return new WebDriverWait(DriverSingleton.getDriver(), duration).until((ExpectedConditions.alertIsPresent()));
     }

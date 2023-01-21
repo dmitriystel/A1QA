@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class AlertsTest extends BaseTest{
-
     @Test
     public void testAlerts() throws IOException, ParseException {
         CustomLogger.info("Alerts test starts.");
@@ -46,7 +45,6 @@ public class AlertsTest extends BaseTest{
                 "Alert with text 'Do you confirm action?' isn't open.");
 
         AlertUtil.acceptAlert();
-
         CustomLogger.info("Step 6.1 Assert if alert is closed.");
 
         Assert.assertFalse(AlertUtil.isDialogPresent(), "Alert isn't closed");

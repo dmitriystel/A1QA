@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class HandlesTest extends BaseTest{
-
     @Test
     public void testHandles() throws IOException, ParseException {
         CustomLogger.info("Handles test starts.");
@@ -22,7 +21,7 @@ public class HandlesTest extends BaseTest{
 
         mainPage.clickAlertsFrameWindowsBtn();
         AlertsFrameWindowsForm alertsFrameWindowsForm = new AlertsFrameWindowsForm();
-        alertsFrameWindowsForm.browserWindowsButtonClick();
+        alertsFrameWindowsForm.browserWindowsBtnClick();
         BrowserWindowsForm browserWindowsForm = new BrowserWindowsForm();
         CustomLogger.info("Step 2. Page with Browser Windows form is open.");
 
