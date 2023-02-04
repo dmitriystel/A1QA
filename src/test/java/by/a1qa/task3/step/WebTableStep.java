@@ -6,6 +6,7 @@ import org.json.simple.parser.ParseException;
 import java.io.IOException;
 
 public class WebTableStep extends WebTable {
+
     public void fillInRegForm_FN(User user) throws IOException, ParseException {
         inputFirstName(user);
     }

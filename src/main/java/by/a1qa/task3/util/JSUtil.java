@@ -8,8 +8,23 @@ import org.openqa.selenium.WebElement;
 import java.io.IOException;
 
 public class JSUtil {
-    public static void pageScrollDown(By locator) throws IOException, ParseException {
-        WebElement element = DriverSingleton.getDriver().findElement(locator);
-        ((JavascriptExecutor) DriverSingleton.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+
+    public static void pageScrollDown(By locator) {
+        CustomLogger.info("JSUtil.pageScrollDown");
+        WebElement element = null;
+        try {
+            element = DriverSingleton.getDriver().findElement(locator);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        try {
+            ((JavascriptExecutor) DriverSingleton.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 }

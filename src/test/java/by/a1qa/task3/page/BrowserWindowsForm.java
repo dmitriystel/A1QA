@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import java.io.IOException;
 
 public class BrowserWindowsForm extends BaseForm {
+
     private static Label browserWindowsFormLabel
             = new Label(By.xpath("//div[contains(text(),'Browser')]/parent::div"), "Browser Windows Form label");
     private Button newTabBtn = new Button(By.id("tabButton"), "New Tab button");
@@ -18,17 +19,17 @@ public class BrowserWindowsForm extends BaseForm {
     public BrowserWindowsForm() {
         super(browserWindowsFormLabel, "Browser Windows");
     }
-    public void newTabBtnClick() throws IOException, ParseException {
-        CustomLogger.info(this.getFormName() + " : newTabBtnClick()");
+
+    public void newTabBtnClick(){
         newTabBtn.click();
     }
-    public BrowserWindowsForm elementsButtonClick() throws IOException, ParseException {
-        CustomLogger.info(this.getFormName() + " : elementsButtonClick()");
+
+    public BrowserWindowsForm elementsButtonClick() {
         elementsBtn.click();
         return this;
     }
-    public BrowserWindowsForm linksButtonClick() throws IOException, ParseException {
-        CustomLogger.info(this.getFormName() + " : linksButtonClick()");
+
+    public BrowserWindowsForm linksButtonClick() {
         linksBtn.click();
         return this;
     }

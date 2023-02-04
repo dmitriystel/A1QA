@@ -8,9 +8,17 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class ConfigParser {
-    public static Config parseConfigDataFromFileToConfigObject(Config config, String path) throws IOException, ParseException {
+    public static Config parseConfigDataFromFileToConfigObject(Config config, String path) {
+        CustomLogger.info("ConfigParser.parseConfigDataFromFileToConfigObject(Config config, String path)");
         JSONParser parser = new JSONParser();
-        JSONObject jsonObject = (JSONObject) parser.parse(new FileReader(path));
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = (JSONObject) parser.parse(new FileReader(path));
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         config.setBrowserName((String)jsonObject.get("browserName"));
         config.setUrl((String)jsonObject.get("url"));
         config.setWaitDuration((String)jsonObject.get("waitDuration"));

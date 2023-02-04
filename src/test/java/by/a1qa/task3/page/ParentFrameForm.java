@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import java.io.IOException;
 
 public class ParentFrameForm extends BaseFrame {
+
     private ChildIframeForm childIframePage = new ChildIframeForm();
     private static By parentFrameLocator = By.id("frame1");
     private static Label parentFrameLabel = new Label(By.xpath("//body[contains(text(), 'Parent frame')]"), "parentFrameLabel");
@@ -16,21 +17,20 @@ public class ParentFrameForm extends BaseFrame {
     public ParentFrameForm() {
         super(parentFrameLabel, parentFrameLocator, "Parent Frame Page");
     }
-    public String getParentFrameLabelText() throws IOException, ParseException {
-        CustomLogger.info(this.getFormName() + " : getParentFrameLabelText()");
+
+    public String getParentFrameLabelText() {
         return parentFrameLabel.getText();
     }
-    public String getChildIframeLabelText() throws IOException, ParseException {
-        CustomLogger.info(this.getFormName() + " : getChildIframeLabelText()");
+
+    public String getChildIframeLabelText() {
         return childIframeLabel.getText();
     }
-    public void switchToChildFrame() throws IOException, ParseException {
-        CustomLogger.info(this.getFormName() + " : switchToChildFrame()");
+
+    public void switchToChildFrame() {
         childIframePage.switchToThisFrame();
     }
 
-    public void leaveChildFrame() throws IOException, ParseException {
-        CustomLogger.info(this.getFormName() + " : leaveChildFrame()");
+    public void leaveChildFrame() {
         childIframePage.leaveFrame();
     }
 }

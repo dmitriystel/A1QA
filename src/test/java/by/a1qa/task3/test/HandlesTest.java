@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class HandlesTest extends BaseTest{
+
     @Test
     public void testHandles() throws IOException, ParseException {
         CustomLogger.info("Handles test starts.");

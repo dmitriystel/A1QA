@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import java.io.IOException;
 
 public class AlertsFrameWindowsForm extends BaseForm {
+
     private static Label alertsFrameAndWindowLabel
             = new Label(By.xpath("//div[contains(@class, 'main-header') and contains(text(), 'Alerts, Frame & Windows')]"),
         "alertsFrameAndWindowLabel");
@@ -20,18 +21,17 @@ public class AlertsFrameWindowsForm extends BaseForm {
         super(alertsFrameAndWindowLabel, "alertsFrameAndWindowsPage");
     }
 
-    public AlertsFrameWindowsForm openAlertsForm() throws IOException, ParseException {
-        CustomLogger.info(this.getFormName() + " : openAlertsForm()");
+    public AlertsFrameWindowsForm openAlertsForm() {
         alertsBtn.click();
         return this;
     }
-    public AlertsFrameWindowsForm nestedFramesBtnClick() throws IOException, ParseException {
-        CustomLogger.info(this.getFormName() + " : nestedFramesButtonClick()");
+
+    public AlertsFrameWindowsForm nestedFramesBtnClick(){
         nestedFramesBtn.click();
         return this;
     }
-    public AlertsFrameWindowsForm browserWindowsBtnClick() throws IOException, ParseException {
-        CustomLogger.info(this.getFormName() + " : browserWindowsButtonClick()");
+
+    public AlertsFrameWindowsForm browserWindowsBtnClick() {
         browserWindowsBtn.click();
         return this;
     }

@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class IframeTest extends BaseTest {
+
     @Test
     public void testIframe() throws IOException, ParseException {
         CustomLogger.info("Alerts test starts.");

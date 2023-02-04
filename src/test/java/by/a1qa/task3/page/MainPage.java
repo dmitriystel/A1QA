@@ -3,12 +3,12 @@ package by.a1qa.task3.page;
 import by.a1qa.task3.base.BaseForm;
 import by.a1qa.task3.element.Button;
 import by.a1qa.task3.element.Label;
-import by.a1qa.task3.util.CustomLogger;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import java.io.IOException;
 
 public class MainPage extends BaseForm {
+
     private static Label seleniumCertificationTrainingLabel
             = new Label(By.xpath("//img[contains(@class, 'banner')]"), "seleniumCertificationTrainingLabel");
     private Button alertsFrameAndWindowsBtn
@@ -18,13 +18,13 @@ public class MainPage extends BaseForm {
     public MainPage() {
         super(seleniumCertificationTrainingLabel, "mainPage");
     }
-    public MainPage clickAlertsFrameWindowsBtn() throws IOException, ParseException {
-        CustomLogger.info(this.getFormName() + " : clickAlertsFrameWindowsBtn()");
+
+    public MainPage clickAlertsFrameWindowsBtn()  {
         alertsFrameAndWindowsBtn.click();
         return this;
     }
-    public MainPage clickElementsBtn() throws IOException, ParseException {
-        CustomLogger.info(this.getFormName() + " : clickElementsBtn()");
+
+    public MainPage clickElementsBtn() {
         elementsButton.click();
         return this;
     }

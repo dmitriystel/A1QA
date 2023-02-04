@@ -13,6 +13,7 @@ import org.openqa.selenium.By;
 import java.io.IOException;
 
 public class WebTable extends BaseForm {
+
     private static Label webTablesLabel
             = new Label(By.xpath("//div[contains(@class, 'main-header') and contains(text(), 'Web Tables')]"), "webTablesLabel");
     private Button addNewRecordBtn = new Button(By.id("addNewRecordButton"), "add new record button");
@@ -31,52 +32,59 @@ public class WebTable extends BaseForm {
     public WebTable() {
         super(webTablesLabel, "webTablesLabel");
     }
-    public WebTable clickAddNewRecordBtn() throws IOException, ParseException {
+
+    public WebTable clickAddNewRecordBtn()  {
         CustomLogger.info(this.getFormName() + " : clickAddNewRecordBtn()");
         addNewRecordBtn.click();
         return this;
     }
-    public boolean isRegFormLabelOpen() throws IOException, ParseException {
+
+    public boolean isRegFormLabelOpen()  {
         CustomLogger.info(this.getFormName() + " : isRegistrationFormLabelOpen()");
         return  registrationFormLabel.isDisplayed();
     }
-    public void inputFirstName(User user) throws IOException, ParseException {
+
+    public void inputFirstName(User user) {
         firstNameTextBox.sendText(user.getFirstName());
     }
-    public void inputLastName(User user) throws IOException, ParseException {
+
+    public void inputLastName(User user)  {
         lastNameTextBox.sendText(user.getLastName());
     }
-    public void inputUserEmail(User user) throws IOException, ParseException {
+    public void inputUserEmail(User user)  {
         userEmailTextBox.sendText(user.getEmail());
     }
-    public void inputAge(User user) throws IOException, ParseException {
+
+    public void inputAge(User user) {
         ageTextBox.sendText(user.getAge());
     }
+
     public void inputSalary(User user) throws IOException, ParseException {
         salaryTextBox.sendText(user.getSalary());
     }
+
     public void inputDepartment(User user) throws IOException, ParseException {
         departmentTextBox.sendText(user.getDepartment());
     }
+
     public WebTable clickSubmitBtn() throws IOException, ParseException {
-        CustomLogger.info(this.getFormName() + " : clickSubmitBtn()");
         submitBtn.click();
         ConditionalWait.waitElementDisappears(registrationFormLabel);
         return this;
     }
+
     public boolean isUserDataLabelOpen(String userData) throws IOException, ParseException {
-        CustomLogger.info(this.getFormName() + " : isUserDataLabelOpen(String userData)");
         return new Label(By.xpath(String.format(userDataDynamicLocator, userData)),
                 "User data dynamic label : " + userData).isDisplayed();
     }
+
     public int getNumOfUserRecords() throws IOException, ParseException {
-        CustomLogger.info(this.getFormName() + " : getNumOfUserRecords()");
         return DriverSingleton.getDriver().findElements(By.xpath(String.format(userDataDynamicLocator, "@"))).size();
     }
+
     public void clickUserDeleteBtn(String userData) throws IOException, ParseException {
         Button userDeleteBtn = new Button(By.xpath(String.format(userDeleteButtonDynamicLocator, userData)),
                 "specific user delete button : " + userData);
-        CustomLogger.info(this.getFormName() + " : clickUserDeleteBtn(String userData)");
         userDeleteBtn.click();
         ConditionalWait.waitElementDisappears(userDeleteBtn);
     }

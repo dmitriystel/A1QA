@@ -12,11 +12,12 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import java.io.IOException;
 
 public class DriverSingleton {
+
     private static WebDriver driver;
 
     private DriverSingleton(){
     }
-    public static WebDriver getDriver() throws IOException, ParseException {
+    public static WebDriver getDriver(){
         if(driver == null){
             String browserName = ConfigManager.getBrowserName();
             String options = ConfigManager.getOptions();
@@ -39,6 +40,7 @@ public class DriverSingleton {
         }
         return driver;
     }
+
     public static void closeBrowser() throws IOException, ParseException {
         CustomLogger.info("BrowserUtil.closeBrowser()");
         DriverSingleton.getDriver().quit();

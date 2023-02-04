@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class TablesTest extends BaseTest{
+
     @DataProvider(name = "userProvider")
     public Object[][] dataProviderMethod() throws IOException {
         List<User> users = UserParser.parseUserFromFileToList();
@@ -26,6 +27,7 @@ public class TablesTest extends BaseTest{
         }
         return usersObj;
     }
+
     @Test(dataProvider = "userProvider")
     public void testTables(Object usersObj) throws IOException, ParseException {
         CustomLogger.info("Tables test starts.");

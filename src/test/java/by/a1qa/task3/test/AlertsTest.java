@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class AlertsTest extends BaseTest{
+
     @Test
     public void testAlerts() throws IOException, ParseException {
         CustomLogger.info("Alerts test starts.");
